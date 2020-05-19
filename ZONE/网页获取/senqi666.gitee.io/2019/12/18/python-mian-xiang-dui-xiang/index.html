@@ -1,0 +1,2813 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+    
+
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="Python面向对象, 浩大大">
+    <meta name="baidu-site-verification" content="fmlEuI34ir">
+    <meta name="google-site-verification" content="KeoTn_OFy4ndJwXNmm2gMeQfPhd7alqE9vQDwI32KCY">
+    <meta name="description" content="面向对象(OOP)面向对象编程－ Object Oriented Programming 简写 OOP
+1. 面向对象基本概念
+我们之前学习的编程方式就是 面向过程 的
+面向过程 和 面向对象，是两种不同的 编程方式
+对比 面向过程 的特点">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>Python面向对象 | 浩大大</title>
+    <link rel="icon" type="image/png" href="../../../../favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="../../../../libs/awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../../libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../../libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="../../../../libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../../libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../../css/matery.css">
+    <link rel="stylesheet" type="text/css" href="../../../../css/my.css">
+    
+    <style type="text/css">
+        
+            
+            code[class*="language-"],
+            pre[class*="language-"] {
+                white-space: pre !important;
+            }
+
+        
+    </style>
+
+    <script src="../../../../libs/jquery/jquery-2.2.0.min.js"></script>
+    <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+    
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?46e79e71af0709a5b9106bf20cecc493";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
+    
+    
+        <script>
+            (function(){
+                var bp = document.createElement('script');
+                var curProtocol = window.location.protocol.split(':')[0];
+                if (curProtocol === 'https') {
+                    bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+                }
+                else {
+                    bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+                }
+                var s = document.getElementsByTagName("script")[0];
+                s.parentNode.insertBefore(bp, s);
+            })();
+        </script>
+    
+
+<link rel="stylesheet" href="../../../../css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="../../../../css/prism-line-numbers.css" type="text/css"></head>
+
+
+    <body>
+
+        <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="../../../../index.html" class="waves-effect waves-light">
+                    
+                    <img src="../../../../medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">浩大大</span>
+                </a>
+            </div>
+            
+
+
+<!-- <a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fa fa-navicon"></i></a>
+<ul class="right">
+    
+    <li class="hide-on-med-and-down">
+        <a href="/" class="waves-effect waves-light">
+            
+            <i class="fa fa-home"></i>
+            
+            <span>首页</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/tags" class="waves-effect waves-light">
+            
+            <i class="fa fa-tags"></i>
+            
+            <span>标签</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/categories" class="waves-effect waves-light">
+            
+            <i class="fa fa-bookmark"></i>
+            
+            <span>分类</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/archives" class="waves-effect waves-light">
+            
+            <i class="fa fa-archive"></i>
+            
+            <span>归档</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/AV" class="waves-effect waves-light">
+            
+            <i class="fa fa-music"></i>
+            
+            <span>视听</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/about" class="waves-effect waves-light">
+            
+            <i class="fa fa-user-circle-o"></i>
+            
+            <span>关于我</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/friends" class="waves-effect waves-light">
+            
+            <i class="fa fa-address-book"></i>
+            
+            <span>友情链接</span>
+        </a>
+    </li>
+    
+    <li>
+        <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+            <i id="searchIcon" class="fa fa-search" title="搜索"></i>
+        </a>
+    </li>
+</ul> -->
+
+<!-- 支持二级菜单特性 -->
+<a href="index.html#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fa fa-navicon"></i></a>
+<ul class="right nav-menu">
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="../../../../index.html" class="waves-effect waves-light">
+              
+                <i class="fa fa-home"></i>
+              
+              <span>首页</span>
+            </a>
+
+            
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="../../../../tags" class="waves-effect waves-light">
+              
+                <i class="fa fa-tags"></i>
+              
+              <span>标签</span>
+            </a>
+
+            
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="../../../../categories" class="waves-effect waves-light">
+              
+                <i class="fa fa-bookmark"></i>
+              
+              <span>分类</span>
+            </a>
+
+            
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="../../../../archives" class="waves-effect waves-light">
+              
+                <i class="fa fa-archive"></i>
+              
+              <span>归档</span>
+            </a>
+
+            
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="../../../../AV" class="waves-effect waves-light">
+              
+                <i class="fa fa-music"></i>
+              
+              <span>视听</span>
+            </a>
+
+            
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="../../../../about" class="waves-effect waves-light">
+              
+                <i class="fa fa-user-circle-o"></i>
+              
+              <span>关于我</span>
+            </a>
+
+            
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="../../../../friends" class="waves-effect waves-light">
+              
+                <i class="fa fa-address-book"></i>
+              
+              <span>友情链接</span>
+            </a>
+
+            
+      </li>
+    
+
+    <li>
+        <a href="index.html#searchModal" class="modal-trigger waves-effect waves-light">
+            <i id="searchIcon" class="fa fa-search" title="搜索"></i>
+        </a>
+    </li>
+
+</ul>
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="../../../../medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">浩大大</div>
+        <div class="logo-desc">
+            
+            河北软件 | 软件技术 | 人工智能
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li>
+            <a href="../../../../index.html" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-home"></i>
+                
+                首页
+            </a>
+        </li>
+        
+        <li>
+            <a href="../../../../tags" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-tags"></i>
+                
+                标签
+            </a>
+        </li>
+        
+        <li>
+            <a href="../../../../categories" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-bookmark"></i>
+                
+                分类
+            </a>
+        </li>
+        
+        <li>
+            <a href="../../../../archives" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-archive"></i>
+                
+                归档
+            </a>
+        </li>
+        
+        <li>
+            <a href="../../../../AV" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-music"></i>
+                
+                视听
+            </a>
+        </li>
+        
+        <li>
+            <a href="../../../../about" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-user-circle-o"></i>
+                
+                关于我
+            </a>
+        </li>
+        
+        <li>
+            <a href="../../../../friends" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-address-book"></i>
+                
+                友情链接
+            </a>
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/senqi-666/python" class="waves-effect waves-light" target="_blank">
+                <i class="fa fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+
+   
+   
+<!-- 支持二级菜单特性 -->
+<!-- <ul class="menu-list mobile-menu-list">
+    
+        <li class="m-nav-item">
+                
+                    <a href="/" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-home"></i>
+                        
+                        首页
+                    </a>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="/tags" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-tags"></i>
+                        
+                        标签
+                    </a>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="/categories" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-bookmark"></i>
+                        
+                        分类
+                    </a>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="/archives" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-archive"></i>
+                        
+                        归档
+                    </a>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="/AV" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-music"></i>
+                        
+                        视听
+                    </a>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="/about" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-user-circle-o"></i>
+                        
+                        关于我
+                    </a>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="/friends" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-address-book"></i>
+                        
+                        友情链接
+                    </a>
+              
+            </li>
+        
+
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/senqi-666/python" class="waves-effect waves-light" target="_blank">
+                <i class="fa fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul> -->
+
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/senqi-666/python" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+        
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('../../../../medias/featureimages/11.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <div class="description center-align post-title">
+                        Python面向对象
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="../../../../libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 20px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="https://senqi666.gitee.io/tags/Python/" target="_blank">
+                                <span class="chip bg-color">Python</span>
+                            </a>
+                        
+                            <a href="https://senqi666.gitee.io/tags/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" target="_blank">
+                                <span class="chip bg-color">面向对象</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fa fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="https://senqi666.gitee.io/categories/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" class="post-category" target="_blank">
+                                面向对象
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="post-info">
+                <div class="post-date info-break-policy">
+                    <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2019-12-18
+                </div>
+
+                <div class="post-author info-break-policy">
+                    <i class="fa fa-user-o fa-fw"></i>作者:&nbsp;&nbsp;
+                    
+                        森七
+                    
+                </div>
+
+                
+                    
+                    <div class="info-break-policy">
+                        <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
+                        7.3k
+                    </div>
+                    
+
+                    
+                    <div class="info-break-policy">
+                        <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                        28 分
+                    </div>
+                    
+                
+                
+                
+                        <span id="busuanzi_container_site_pv" style='display:none'></span>
+                        <i class="fa fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv" ></span>
+    
+                
+
+            </div>
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="面向对象-OOP"><a href="index.html#面向对象-OOP" class="headerlink" title="面向对象(OOP)"></a>面向对象(OOP)</h1><p><strong>面向对象编程－ <code>Object Oriented Programming</code> 简写 <code>OOP</code></strong></p>
+<h2 id="1-面向对象基本概念"><a href="index.html#1-面向对象基本概念" class="headerlink" title="1. 面向对象基本概念"></a>1. 面向对象基本概念</h2><ul>
+<li>我们之前学习的编程方式就是 <strong>面向过程</strong> 的</li>
+<li><strong>面向过程</strong> 和 <strong>面向对象</strong>，是两种不同的 <strong>编程方式</strong></li>
+<li>对比 <strong>面向过程</strong> 的特点，可以更好的了解什么是 <strong>面向对象</strong></li>
+</ul>
+<h3 id="1-1-过程和函数-科普"><a href="index.html#1-1-过程和函数-科普" class="headerlink" title="1.1 过程和函数(科普)"></a>1.1 过程和函数(科普)</h3><ul>
+<li><strong>过程</strong> 是早期的一个编程概念</li>
+<li><strong>过程</strong> 类似于函数，只能执行，但是没有返回值</li>
+<li><strong>函数</strong> 不仅能执行，还可以返回结果</li>
+</ul>
+<h3 id="1-2-面向过程和面向对象的基本概念"><a href="index.html#1-2-面向过程和面向对象的基本概念" class="headerlink" title="1.2 面向过程和面向对象的基本概念"></a>1.2 面向过程和面向对象的基本概念</h3><ol>
+<li><p><strong>面向过程－怎么做？</strong></p>
+<ol>
+<li>把完成某一个需求的 <code>所有步骤</code> <code>从头到尾</code> 逐步实现</li>
+</ol>
+</li>
+<li><p>根据开发需求，将某些 <strong>功能独立</strong> 的代码 <strong>封装</strong> 成一个又一个 <strong>函数</strong></p>
+<ol start="3">
+<li><p>最后完成的代码，就是顺序地调用 <strong>不同的函数</strong></p>
+<p><span style="font-size:25px;"><strong>特点</strong></span></p>
+</li>
+</ol>
+<ul>
+<li><p>注重 <strong>步骤与过程</strong>，不注重职责分工</p>
+</li>
+<li><p>如果需求复杂，代码会变得很复杂</p>
+</li>
+<li><p><strong>开发复杂项目，没有固定的套路，开发难度很大</strong></p>
+<p><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="815831775.png" alt=""></p>
+</li>
+</ul>
+</li>
+<li><p><strong>面向对象－谁来做？</strong></p>
+<ol>
+<li><p>在完成某一个需求前，首先确定 <strong>职责－要做的事情(方法)</strong></p>
+</li>
+<li><p>根据 <strong>职责</strong> 确定不同的 <strong>对象</strong>，在 <strong>对象</strong> 内部封装不同的 <strong>方法</strong> (多个)</p>
+</li>
+<li><p>最后完成的代码，就是顺序地让 <strong>不同的对象</strong> 调用 <strong>不同的方法</strong></p>
+<p><span style="font-size:25px;"><strong>特点</strong></span></p>
+</li>
+</ol>
+<ul>
+<li><p>注重 <strong>对象和职责</strong>，不同的对象承担不同的职责</p>
+</li>
+<li><p>更加适合应对复杂的需求变化，<strong>是专门应对复杂项目开发，提供的固定套路</strong></p>
+</li>
+<li><p><strong>需要在面向过程基础上，再学习一些面向对象的语法</strong></p>
+<blockquote>
+<p><em>相比较函数，面向对象是更大的封装 ，根据 职责 在 一个对象中封装多个方法</em></p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="2-类和对象"><a href="index.html#2-类和对象" class="headerlink" title="2. 类和对象"></a>2. 类和对象</h2><h3 id="2-1-类和对象的概念"><a href="index.html#2-1-类和对象的概念" class="headerlink" title="2.1 类和对象的概念"></a>2.1 类和对象的概念</h3><p><strong>类</strong> 和 <strong>对象</strong> 是 <strong>面向对象编程的两个核心概念</strong></p>
+<ol>
+<li><p><strong>类</strong></p>
+<ul>
+<li><p><strong>类</strong> 是对一群具有 <strong>相同特征</strong> 或者 <strong>行为</strong> 的事物的一个统称，是抽象的，<strong>不能直接使用</strong></p>
+<ul>
+<li><strong>特征</strong> 被称为 <strong>属性</strong></li>
+<li><strong>行为</strong> 被称为 <strong>方法</strong></li>
+</ul>
+</li>
+<li><p><strong>类</strong> 就相当于制造飞机时的 <strong>图纸</strong> ，是一个 <strong>模板</strong>，是 <strong>负责创建对象的</strong></p>
+</li>
+</ul>
+</li>
+</ol>
+<ol start="2">
+<li><p><strong>对象</strong></p>
+<ul>
+<li><p><strong>对象</strong> 是 <strong>由类创建出来的一个具体存在</strong>，可以直接使用</p>
+</li>
+<li><p>由 <strong>哪一个类</strong> 创建出来的 <strong>对象</strong>，就拥有在 <strong>哪一个类</strong> 中定义的：</p>
+<ul>
+<li><strong>属性</strong></li>
+<li><strong>方法</strong></li>
+</ul>
+</li>
+<li><p><strong>对象</strong> 就相当于用 <strong>图纸 制造</strong> 的飞机</p>
+<blockquote>
+<p><em>在程序开发中，应该先有类，再有对象</em></p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="2-2-类和对象的关系"><a href="index.html#2-2-类和对象的关系" class="headerlink" title="2.2 类和对象的关系"></a><strong>2.2 类和对象的关系</strong></h3><ul>
+<li><p><strong>类是模板，对象</strong> 是根据 <strong>类</strong> 这个模板创建出来的，应该 <strong>先有类，再有对象</strong></p>
+</li>
+<li><p><strong>类</strong> 只有一个，而 <strong>对象</strong> 可以有很多个</p>
+<ul>
+<li><strong>不同的对象</strong> 之间 <strong>属性</strong> 可能会各不相同</li>
+</ul>
+</li>
+<li><p><strong>类</strong> 中定义了什么 <strong>属性和方法</strong>，<strong>对象</strong> 中就有什么属性和方法，<strong>不可能多，也不可能少</strong></p>
+</li>
+</ul>
+<h3 id="2-3-类的设计"><a href="index.html#2-3-类的设计" class="headerlink" title="2.3 类的设计"></a>2.3 类的设计</h3><p>在使用面向对象开发前，应该首先分析需求，确定一下，程序中需要包含哪些类</p>
+<p><strong>在程序开发中，要设计一个类，通常需要满足以下三个要素：</strong></p>
+<ol>
+<li><strong>类名</strong> 这类事物的名字，<strong>满足驼峰命名法</strong></li>
+<li><strong>属性</strong> 这类事物具有什么样的特征</li>
+<li><strong>方法</strong> 这类事物具有什么样的行为</li>
+</ol>
+<p><span style="font-size:25px;"><strong>驼峰命名法</strong></span></p>
+<p>例：CapWords</p>
+<ol>
+<li>每一个单词的首字母大写</li>
+<li>单词与单词之间没有下划线</li>
+</ol>
+<h3 id="2-4-类名的确定"><a href="index.html#2-4-类名的确定" class="headerlink" title="2.4 类名的确定"></a>2.4 类名的确定</h3><p><strong>名词提炼法</strong> 分析 <strong>整个业务流程</strong>，出现的 名词，通常就是找到的类</p>
+<h3 id="2-5-属性和方法的确定"><a href="index.html#2-5-属性和方法的确定" class="headerlink" title="2.5 属性和方法的确定"></a>2.5 属性和方法的确定</h3><ul>
+<li><p>对 <strong>对象的特征描述</strong>，通常可以定义成 <strong>属性</strong></p>
+</li>
+<li><p><strong>对象具有的行为</strong>(动词)，通常可以定义成 <strong>方法</strong></p>
+<blockquote>
+<p><em>提示：需求中没有涉及的属性或者方法在设计类时，不需要考虑</em></p>
+</blockquote>
+</li>
+</ul>
+<h2 id="3-面向对象基础语法"><a href="index.html#3-面向对象基础语法" class="headerlink" title="3.面向对象基础语法"></a>3.面向对象基础语法</h2><h3 id="3-1-dir内置函数-拓展"><a href="index.html#3-1-dir内置函数-拓展" class="headerlink" title="3.1 dir内置函数(拓展)"></a>3.1 dir内置函数(拓展)</h3><ul>
+<li>在 <code>Python</code> 中 <strong>对象几乎是无所不在的</strong>，我们之前学习的 <strong>变量，函数</strong> 都是对象</li>
+</ul>
+<p>在 <code>Python</code> 中可以使用以下两个方法验证：</p>
+<ol>
+<li>在 <strong>标识符/数据</strong> 后输入一个 <code>.</code> ，然后按下 <code>TAB</code> 键， <code>iPython</code> 会提示该对象能够调用的 <strong>方法列表</strong></li>
+<li>使用内置函数 <code>dir</code> 传入 <strong>标识符/数据</strong>，可以查看对象内的 <strong>所有属性及方法</strong></li>
+</ol>
+<p><strong>提示</strong> <code>__方法名__</code> 格式的方法是 <code>Python</code> 提供的 <strong>内置方法/属性</strong>，下面是一些常用的内置方法/属性：</p>
+<table>
+<thead>
+<tr>
+<th align="center">序号</th>
+<th align="center">方法名</th>
+<th align="center">类型</th>
+<th align="center">作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><strong>01</strong></td>
+<td align="center">_<em>new_</em></td>
+<td align="center">方法</td>
+<td align="center"><strong>创建对象</strong>时，会被<strong>自动</strong>调用</td>
+</tr>
+<tr>
+<td align="center"><strong>02</strong></td>
+<td align="center">_<em>init_</em></td>
+<td align="center">方法</td>
+<td align="center"><strong>对象被初始化</strong>时，会被<strong>自动</strong>调用</td>
+</tr>
+<tr>
+<td align="center"><strong>03</strong></td>
+<td align="center">_<em>del_</em></td>
+<td align="center">方法</td>
+<td align="center"><strong>对象被从内存中销毁</strong>前，会被<strong>自动</strong>调用</td>
+</tr>
+<tr>
+<td align="center"><strong>04</strong></td>
+<td align="center">_<em>str_</em></td>
+<td align="center">方法</td>
+<td align="center">返回<strong>对象的描述信息</strong>，<code>print</code> 函数输出使用</td>
+</tr>
+</tbody></table>
+<p><strong>提示</strong> 利用好 <code>dir()</code> 函数，在学习时很多内容不需要死记硬背了</p>
+<h3 id="3-2-定义简单的类-包含方法"><a href="index.html#3-2-定义简单的类-包含方法" class="headerlink" title="3.2 定义简单的类(包含方法)"></a>3.2 定义简单的类(包含方法)</h3><blockquote>
+<p><i><strong>面向对象</strong> 是 <strong>更大</strong> 的 <strong>封装</strong>，在 <strong>一个类中 封装 很多个方法</strong>，这样 <strong>通过这个类创建出来的对象，就可以直接调用这些方法了</strong></i></p>
+</blockquote>
+<ol>
+<li><p><strong>定义只包含方法的类</strong></p>
+<ul>
+<li><p>在 <code>Python</code> 中要定义一个包含方法的类，语法格式如下：</p>
+<pre class="line-numbers language-python"><code class="language-python">  <span class="token keyword">class</span> 类名<span class="token punctuation">:</span>
+
+      <span class="token keyword">def</span> 方法<span class="token number">1</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> 参数<span class="token punctuation">)</span><span class="token punctuation">:</span>
+          <span class="token keyword">pass</span>
+
+      <span class="token keyword">def</span> 方法<span class="token number">2</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> 参数<span class="token punctuation">)</span><span class="token punctuation">:</span>
+          <span class="token keyword">pass</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+<li><p><strong>方法</strong> 的定义格式和之前学习过的 <strong>函数</strong> 几乎一样</p>
+</li>
+<li><p>区别在于第一个参数必须是 <code>self</code></p>
+<blockquote>
+<p><em>注意： 类名的命名规则要符合驼峰命名法</em></p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ol>
+<ol start="2">
+<li><p><strong>创建对象</strong></p>
+<ul>
+<li><p>当一个类定义完成之后，要使用这个类来创建对象，语法格式如下：</p>
+<pre class="line-numbers language-python"><code class="language-python">  对象变量 <span class="token operator">=</span> 类名<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+</ul>
+</li>
+</ol>
+<ol start="3">
+<li><p><strong>设计一个面向对象程序</strong></p>
+<p> <strong>需求</strong></p>
+<ul>
+<li>小猫爱吃鱼，小猫要喝水</li>
+</ul>
+<p> <strong>分析</strong></p>
+<ol>
+<li><p>定义一个猫类 <code>Cat</code></p>
+</li>
+<li><p>定义两个方法 <code>eat</code> 和 <code>drink</code></p>
+</li>
+<li><p>按照需求－不需要定义属性</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Cat</span><span class="token punctuation">:</span>
+ <span class="token triple-quoted-string string">'''这是一个猫类'''</span>
+
+ <span class="token keyword">def</span> <span class="token function">eat</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+     <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'小猫爱吃鱼'</span><span class="token punctuation">)</span>
+
+ <span class="token keyword">def</span> <span class="token function">drink</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+     <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'小猫在喝水'</span><span class="token punctuation">)</span>
+
+tom <span class="token operator">=</span> Cat<span class="token punctuation">(</span><span class="token punctuation">)</span>
+tom<span class="token punctuation">.</span>drink<span class="token punctuation">(</span><span class="token punctuation">)</span>
+tom<span class="token punctuation">.</span>eat<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+</ol>
+<p> <strong>引用概念的强调</strong></p>
+<blockquote>
+<p><em>在面向对象开发中，<strong>引用</strong> 的概念是同样适用的</em></p>
+</blockquote>
+<ul>
+<li>在 <code>Python</code> 中使用类 <strong>创建对象之后</strong>，<code>tom</code> 变量中仍然记录的是 <strong>对象在内存中的内存地址</strong></li>
+</ul>
+</li>
+</ol>
+<ul>
+<li><p>也就是 <code>tom</code> 变量 <strong>引用</strong> 了 <strong>新建的猫对象</strong></p>
+<ul>
+<li><p>使用 <code>print</code> 输出 <strong>对象变量</strong>，默认情况下，是能够输出这个变量 <strong>引用的对象</strong> 是 <strong>由哪一个类创建的对象</strong>，以及 <strong>在内存中的地址</strong>(<strong>十六进制表示</strong>)</p>
+<blockquote>
+<p><em>提示：在计算机中，通常使用 十六进制 表示 内存地址</em></p>
+<ul>
+<li><i><strong>十进制</strong> 和 <strong>十六进制</strong> 都是用来表达数字的，只是表示的方式不一样</i></li>
+<li><i><strong>十进制</strong> 和 <strong>十六进制</strong> 的数字之间可以来回转换</i></li>
+</ul>
+</blockquote>
+</li>
+<li><p><code>%d</code> 可以以 <strong>10进制</strong> 输出数字</p>
+</li>
+<li><p><code>%s</code> 可以以 <strong>16进制</strong> 输出数字</p>
+</li>
+</ul>
+</li>
+</ul>
+<ol start="4">
+<li><p><strong>方法中的 self 参数</strong></p>
+<ol>
+<li><p><strong>案例改造－给对象增加属性</strong></p>
+<ul>
+<li><p>在 <code>Python</code> 中，要 <strong>给对象设置属性</strong>，非常的容易，<strong>但是不推荐使用</strong></p>
+<ul>
+<li>因为对象属性的封装应该封装在类的内部</li>
+</ul>
+</li>
+<li><p>只需要在 <strong>类的外部的代码</strong> 中直接通过，设置一个属性即可</p>
+<blockquote>
+<p><em>注意：这种方式虽然简单，但是不推荐使用</em></p>
+</blockquote>
+<pre class="line-numbers language-python"><code class="language-python">tom<span class="token punctuation">.</span>name <span class="token operator">=</span> <span class="token string">'Tom'</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+lazy_cat<span class="token punctuation">.</span>name <span class="token operator">=</span> <span class="token string">'大懒猫'</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+</li>
+</ul>
+</li>
+<li><p><strong>使用 self 在方法内部输出每一只猫的名字</strong></p>
+<blockquote>
+<p><em>由哪一个对象调用的方法，方法内的 <code>self</code> 就是哪一个对象引用的</em></p>
+</blockquote>
+<ul>
+<li>在类封装的方法内部，<code>self</code> 就表示 <strong>当前调用方法的对象自己</strong></li>
+</ul>
+</li>
+</ol>
+<ul>
+<li><p><strong>调用方法时</strong>，程序员不需要传递 <code>self</code> 参数</p>
+</li>
+<li><p><strong>在方法内部</strong> 也可以通过 <code>self.</code>，<strong>访问对象的属性</strong></p>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="4-初始化方法"><a href="index.html#4-初始化方法" class="headerlink" title="4. 初始化方法"></a>4. 初始化方法</h2><h3 id="4-1-之前代码存在的问题－在类的外部给对象增加属性"><a href="index.html#4-1-之前代码存在的问题－在类的外部给对象增加属性" class="headerlink" title="4.1 之前代码存在的问题－在类的外部给对象增加属性"></a>4.1 之前代码存在的问题－在类的外部给对象增加属性</h3><ul>
+<li><p>将案例代码进行调整，<strong>先调用方法再设置属性</strong>，观察一下执行结果</p>
+<pre class="line-numbers language-python"><code class="language-python">  tom <span class="token operator">=</span> Cat<span class="token punctuation">(</span><span class="token punctuation">)</span>
+  tom<span class="token punctuation">.</span>drink<span class="token punctuation">(</span><span class="token punctuation">)</span>
+  tom<span class="token punctuation">.</span>eat<span class="token punctuation">(</span><span class="token punctuation">)</span>
+  tom<span class="token punctuation">.</span>name <span class="token operator">=</span> <span class="token string">'Tom'</span>
+  <span class="token keyword">print</span><span class="token punctuation">(</span>tom<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+<li><p>程序执行报错如下：</p>
+<pre class="line-numbers language-shell"><code class="language-shell">  AttributeError: 'Cat' object has no attribute 'name'
+
+  属性错误： ‘Cat’对象没有‘name’属性<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>  <strong>提示</strong></p>
+<ul>
+<li><p>在日常开发中，不推荐在 <strong>类的外部</strong> 给对象增加属性</p>
+<ul>
+<li>如果 在日常运行时，<strong>没有找到属性，程序会报错</strong></li>
+</ul>
+</li>
+<li><p>对象应该包含有哪些属性，应该 <strong>封装在类的内部</strong></p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="4-2-初始化方法"><a href="index.html#4-2-初始化方法" class="headerlink" title="4.2 初始化方法"></a>4.2 初始化方法</h3><ul>
+<li><p>当使用 <code>类名()</code> 创建对象时，会 <strong>自动</strong> 执行以下操作：</p>
+<ol>
+<li>为对象在内存中 <strong>分配空间</strong>－创建对象</li>
+<li>为对象的属性 <strong>设置初始值</strong>－初始化方法(init)</li>
+</ol>
+</li>
+<li><p>这个 <strong>初始化方法</strong> 就是 <code>__init__</code> 方法，<code>__init__</code> 是对象的 <strong>内置方法</strong></p>
+<blockquote>
+<p><code>__init__</code> 方法是专门用来定义一个类 <strong>具有哪些属性的方法</strong> </p>
+</blockquote>
+<p>  在 <code>Cat</code> 中增加 <code>__init__</code> 方法，验证该方法在创建对象时会被自动调用</p>
+<pre class="line-numbers language-python"><code class="language-python">  <span class="token keyword">class</span> <span class="token class-name">Cat</span><span class="token punctuation">:</span>
+      <span class="token triple-quoted-string string">'''这是一个猫类'''</span>
+
+      <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+          <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'初始化方法'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+</ul>
+<h3 id="4-3-在初始化方法内部定义属性"><a href="index.html#4-3-在初始化方法内部定义属性" class="headerlink" title="4.3 在初始化方法内部定义属性"></a>4.3 在初始化方法内部定义属性</h3><ul>
+<li><p>在 <code>__init__</code> 方法内部使用 <code>self.属性名 = 属性的初始值</code> 就可以 <strong>定义属性</strong></p>
+</li>
+<li><p>定义属性之后，再使用 <code>Cat</code> 类创建对象，都会拥有该属性</p>
+<pre class="line-numbers language-python"><code class="language-python">  <span class="token keyword">class</span> <span class="token class-name">Cat</span><span class="token punctuation">:</span>
+
+      <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+
+          <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'这是一个初始化方法'</span><span class="token punctuation">)</span>
+
+          <span class="token comment" spellcheck="true"># 定义用 Cat 类创建的猫对象都有一个　name 的属性</span>
+          self<span class="token punctuation">.</span>name <span class="token operator">=</span> <span class="token string">'Tom'</span>
+
+      <span class="token keyword">def</span> <span class="token function">eat</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+          <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'{} 爱吃鱼'</span><span class="token punctuation">.</span>format<span class="token punctuation">(</span>self<span class="token punctuation">.</span>name<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+  <span class="token comment" spellcheck="true"># 使用类名()创建对象的时候，会自动使用初始化方法 __init__</span>
+  tom <span class="token operator">=</span> Cat<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+  tom<span class="token punctuation">.</span>eat<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+</ul>
+<h3 id="4-4-改造初始化方法－初始化的同时设置初始值"><a href="index.html#4-4-改造初始化方法－初始化的同时设置初始值" class="headerlink" title="4.4 改造初始化方法－初始化的同时设置初始值"></a>4.4 改造初始化方法－初始化的同时设置初始值</h3><ul>
+<li><p>在开发中，如果希望在 <strong>创建对象的同时，就设置对象的属性</strong>，可以对 <code>__init__</code> 方法进行 <strong>改造</strong></p>
+<ol>
+<li><p>把希望设置的属性值，定义成 <code>__init__</code> 方法的参数</p>
+</li>
+<li><p>在方法内部使用 <code>self.属性 = 行参</code> 接收外部传递的参数</p>
+</li>
+<li><p>在创建对象时，使用 <code>类名(属性1,属性2...)</code> 调用</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Cat</span><span class="token punctuation">:</span>
+
+ <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> name<span class="token punctuation">)</span><span class="token punctuation">:</span>
+     <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'初始化方法 {}'</span><span class="token punctuation">.</span>format<span class="token punctuation">(</span>name<span class="token punctuation">)</span><span class="token punctuation">)</span>
+     self<span class="token punctuation">.</span>name <span class="token operator">=</span> name
+ <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+
+tom <span class="token operator">=</span> Cat<span class="token punctuation">(</span><span class="token string">'Tom'</span><span class="token punctuation">)</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+lazy_cat <span class="token operator">=</span> Cat<span class="token punctuation">(</span><span class="token string">'大懒猫'</span><span class="token punctuation">)</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+</ol>
+</li>
+</ul>
+<h2 id="5-内置方法和属性"><a href="index.html#5-内置方法和属性" class="headerlink" title="5.内置方法和属性"></a>5.内置方法和属性</h2><table>
+<thead>
+<tr>
+<th align="center">序号</th>
+<th align="center">方法名</th>
+<th align="center">类型</th>
+<th align="center">作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><strong>01</strong></td>
+<td align="center">_<em>del_</em></td>
+<td align="center">方法</td>
+<td align="center"><strong>对象被从内存中销毁前</strong>，会被 <strong>自动</strong> 调用</td>
+</tr>
+<tr>
+<td align="center"><strong>02</strong></td>
+<td align="center">_<em>str_</em></td>
+<td align="center">方法</td>
+<td align="center">返回 <strong>对象的描述信息</strong>，print 函数输出使用</td>
+</tr>
+</tbody></table>
+<h3 id="5-1-del-方法-知道"><a href="index.html#5-1-del-方法-知道" class="headerlink" title="5.1 _del_ 方法(知道)"></a>5.1 _<em>del_</em> 方法(知道)</h3><ul>
+<li><p>在 <code>Python</code> 中</p>
+<ul>
+<li>当使用 <code>类名()</code> 创建对象时，为对象 <strong>分配完空间</strong> 后，<strong>自动</strong> 调用 <code>__init__</code> 方法</li>
+<li>当一个 <strong>对象被从内存中销毁</strong> 前，会 <strong>自动</strong> 调用 <code>__del__</code> 方法</li>
+</ul>
+</li>
+<li><p><strong>应用场景</strong></p>
+<ul>
+<li><code>__init__</code> 改造初始化方法，可以让创建对象更加灵活</li>
+<li><code>__del__</code> 如果希望在对象被销毁前，再做一些事情，可以考虑一下 <code>__del__</code> 方法</li>
+</ul>
+</li>
+<li><p><strong>生命周期</strong></p>
+<ul>
+<li>一个对象从调用 <code>类名()</code> 创建，生命周期开始</li>
+<li>一个对象的 <code>__del__</code> 方法一旦被调用，生命周期结束</li>
+<li>在对象的生命周期内，可以访问对象属性，或者让对象调用方法</li>
+</ul>
+</li>
+</ul>
+<h3 id="5-2-str-方法"><a href="index.html#5-2-str-方法" class="headerlink" title="5.2 _str_ 方法"></a>5.2 _<em>str_</em> 方法</h3><ul>
+<li><p>在 <code>Python</code> 中，使用 <code>print</code> 输出 <strong>对象变量</strong>，默认情况下，会输出这个变量 <strong>引用的对象</strong> 是 <strong>由哪一个类创建的对象</strong>，以及 <strong>在内存中的地址(十六进制表示)</strong></p>
+</li>
+<li><p>如果在开发中，希望使用 <code>print</code> 输出 <strong>对象变量</strong> 时，能够打印 <strong>自定义的内容</strong>，就可以利用 <code>__str__</code> 这个内置方法了</p>
+<blockquote>
+<p><em>注意：<code>__str__</code> 方法必须返回一个字符串</em></p>
+</blockquote>
+<pre class="line-numbers language-python"><code class="language-python">  <span class="token keyword">class</span> <span class="token class-name">Cat</span><span class="token punctuation">:</span>
+
+      <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> new_name<span class="token punctuation">)</span><span class="token punctuation">:</span>
+
+          self<span class="token punctuation">.</span>name <span class="token operator">=</span> new_name
+          <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'{} 来了'</span><span class="token punctuation">.</span>format<span class="token punctuation">(</span>self<span class="token punctuation">.</span>name<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+      <span class="token keyword">def</span> <span class="token function">__del__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+
+          <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'{} 去了'</span><span class="token punctuation">.</span>format<span class="token punctuation">(</span>self<span class="token punctuation">.</span>name<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+      <span class="token keyword">def</span> <span class="token function">__str__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+          <span class="token keyword">return</span> <span class="token string">'我是小猫 {}'</span><span class="token punctuation">.</span>format<span class="token punctuation">(</span>self<span class="token punctuation">.</span>name<span class="token punctuation">)</span>
+
+  tom <span class="token operator">=</span> Cat<span class="token punctuation">(</span><span class="token string">'Tom'</span><span class="token punctuation">)</span>
+  <span class="token keyword">print</span><span class="token punctuation">(</span>tom<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+</ul>
+<h2 id="6-类的结构"><a href="index.html#6-类的结构" class="headerlink" title="6. 类的结构"></a>6. 类的结构</h2><h3 id="6-1-术语－实例"><a href="index.html#6-1-术语－实例" class="headerlink" title="6.1 术语－实例"></a>6.1 术语－实例</h3><ol>
+<li>在使用面向对象开发，第一步是设计类</li>
+<li>使用 <code>类名()</code> 创建对象，<strong>创建对象</strong> 的动作有两步：<ol>
+<li>在内存中为对象 <strong>分配空间</strong></li>
+<li>调用初始化方法 <code>__init__</code> 为 <strong>对象初始化</strong></li>
+</ol>
+</li>
+<li>对象创建后，<strong>内存</strong> 中就有了一个对象的 <strong>实实在在</strong> 的存在－<strong>实例</strong></li>
+</ol>
+<p><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="423422342.jpeg" alt=""></p>
+<p>因此，通常也会把：</p>
+<ol>
+<li><p>创建出来的 <strong>对象</strong> 叫做 <strong>类</strong> 的 <strong>实例</strong></p>
+</li>
+<li><p>创建对象的 <strong>动作</strong> 叫做 <strong>实例化</strong></p>
+</li>
+<li><p><strong>对象的属性</strong> 叫做 <strong>实例属性</strong></p>
+</li>
+<li><p><strong>对象调用的方法</strong> 叫做 <strong>实例方法</strong></p>
+</li>
+</ol>
+<p>在程序执行时：</p>
+<ol>
+<li>对象各自拥有自己的 <strong>实例属性</strong></li>
+<li>调用对象方法，可以通过 <code>self</code><ul>
+<li>访问自己的属性</li>
+<li>调用自己的方法</li>
+</ul>
+</li>
+</ol>
+<p><span style="font-size:25px;"><strong>结论</strong></span></p>
+<ul>
+<li>每一个对象 都有自己 独立的内存空间，<strong>保存各自不同的属性</strong></li>
+<li><strong>多个对象的方法，在内存中只有一份</strong>，在调用方法时，<strong>需要把对象的引用</strong> 传递到方法内部</li>
+</ul>
+<h3 id="6-2-类是一个特殊的对象"><a href="index.html#6-2-类是一个特殊的对象" class="headerlink" title="6.2 类是一个特殊的对象"></a>6.2 类是一个特殊的对象</h3><blockquote>
+<p><em><code>Python</code> 中 <strong>一切皆对象</strong>：</em></p>
+<ul>
+<li><em><code>class AAA:</code>定义的类属于 *</em>类对象***</li>
+<li><code>obj1 = AAA()</code> 属于 <strong>实例对象</strong></li>
+</ul>
+</blockquote>
+<ul>
+<li><p>在程序运行时，<strong>类</strong> 同样 <strong>会被加载到内存</strong></p>
+</li>
+<li><p>在 <code>Python</code> 中，<strong>类</strong> 是一个特殊的对象－<strong>类对象</strong></p>
+</li>
+<li><p>在程序运行时，<strong>类对象</strong> 在内存中 <strong>只有一份使用一个类</strong>，可以创建出 <strong>很多个对象实例</strong></p>
+</li>
+<li><p>除了封装 <strong>实例</strong> 的 <strong>属性</strong> 和 <strong>方法</strong>  外，<strong>类对象</strong> 还可以拥有自己的 <strong>属性</strong> 和 <strong>方法</strong></p>
+<ol>
+<li><strong>类属性</strong></li>
+<li><strong>类方法</strong></li>
+</ol>
+</li>
+<li><p>通过 <strong>类名</strong> 的方式可以 <strong>访问类的属性</strong> 或者 <strong>调用类的方法</strong></p>
+</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="3423424.jpeg" alt=""></p>
+<h3 id="6-3-类属性和实例属性"><a href="index.html#6-3-类属性和实例属性" class="headerlink" title="6.3 类属性和实例属性"></a>6.3 类属性和实例属性</h3><ol>
+<li><p><strong>概念和使用</strong></p>
+<ul>
+<li><strong>类属性</strong> 就是给 <strong>类对象</strong> 中定义的 <strong>属性</strong></li>
+<li>通常用来记录 <strong>与这个类相关</strong> 的特征</li>
+<li><strong>类属性</strong> 不会用于记录 <strong>具体对象的特征</strong></li>
+</ul>
+<p> <strong>示例需求</strong></p>
+<ul>
+<li><p>定义一个 <strong>工具类</strong></p>
+</li>
+<li><p>每件工具都有自己的 <code>name</code></p>
+</li>
+<li><p><strong>需求</strong>－知道使用这个类，创建了多少个工具对象</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Tool</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
+
+  <span class="token comment" spellcheck="true"># 使用赋值语句，定义类属性，记录创建工具对象的总数</span>
+  count <span class="token operator">=</span> <span class="token number">0</span>
+
+  <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+      self<span class="token punctuation">.</span>name <span class="token operator">=</span> name
+
+      <span class="token comment" spellcheck="true"># 针对类属性做一个计数+1</span>
+      Tool<span class="token punctuation">.</span>count <span class="token operator">+=</span> <span class="token number">1</span>
+
+<span class="token comment" spellcheck="true"># 创建工具对象</span>
+tool1 <span class="token operator">=</span> Tool<span class="token punctuation">(</span><span class="token string">'斧头'</span><span class="token punctuation">)</span>
+tool2 <span class="token operator">=</span> Tool<span class="token punctuation">(</span><span class="token string">'榔头'</span><span class="token punctuation">)</span>
+tool3 <span class="token operator">=</span> Tool<span class="token punctuation">(</span><span class="token string">'铁锹'</span><span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true"># 知道使用 Tool 类到底创建了多少个对象？</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'现在创建了{}个工具'</span><span class="token punctuation">.</span>format<span class="token punctuation">(</span>Tool<span class="token punctuation">.</span>count<span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+</ul>
+</li>
+<li><p><strong>属性的获取机制(科普)</strong></p>
+<ul>
+<li><p>在 <code>Python</code> 中 <strong>属性的获取</strong> 存在一个 <strong>向上查找机制</strong></p>
+<p><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="121231242.jpeg" alt=""></p>
+</li>
+<li><p>因此，要访问类属性有两种方式：</p>
+<ol>
+<li><strong>类名.类属性</strong></li>
+<li><strong>对象.类属性</strong>(不推荐)</li>
+</ol>
+</li>
+</ul>
+<p> <strong>注意</strong></p>
+<ul>
+<li>如果使用 <code>对象.类属性 = 值</code> 赋值语句，只会 <strong>给对象添加一个属性</strong>，而不会影响到 <strong>类属性的值</strong></li>
+</ul>
+</li>
+</ol>
+<h3 id="6-4-类方法和静态方法"><a href="index.html#6-4-类方法和静态方法" class="headerlink" title="6.4 类方法和静态方法"></a>6.4 类方法和静态方法</h3><ol>
+<li><p><strong>类方法</strong></p>
+<ul>
+<li><p><strong>类属性</strong> 就是针对 <strong>类对象</strong> 定义的属性</p>
+<ul>
+<li>使用 <strong>赋值语句</strong> 在 <code>class</code> 关键字下方可以定义 <strong>类属性</strong></li>
+<li><strong>类属性</strong> 用于记录 <strong>与这个类相关</strong> 的特征</li>
+</ul>
+</li>
+<li><p><strong>类方法</strong> 就是针对 <strong>类对象</strong> 定义的方法</p>
+<ul>
+<li>在 <strong>类方法</strong> 内部可以直接访问 <strong>类属性</strong> 或者调用其他的 <strong>类方法</strong></li>
+</ul>
+</li>
+</ul>
+<p> <strong>语法如下</strong></p>
+<pre class="line-numbers language-python"><code class="language-python"> @classmethod
+ <span class="token keyword">def</span> 类方法名<span class="token punctuation">(</span>cls<span class="token punctuation">)</span><span class="token punctuation">:</span>
+     <span class="token keyword">pass</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li><p>类方法需要用 <strong>修饰器</strong> <code>@classmethod</code> 来标识，<strong>告诉解释器这是一个类方法</strong></p>
+</li>
+<li><p>类方法的  <strong>第一个参数</strong> 应该是 <code>cls</code></p>
+<ul>
+<li>由 <strong>哪一个类</strong> 调用的方法，方法内的 <code>cls</code> 就是 <strong>哪一个类的引用</strong></li>
+<li>这个参数和 <strong>实例方法</strong> 的第一个参数是 <code>self</code> 类似</li>
+<li><strong>提示</strong> 使用其他名称也可以，不过习惯使用 <code>cls</code></li>
+</ul>
+</li>
+<li><p>通过 <strong>类名</strong>，调用 <strong>类方法</strong>，<strong>调用方法时</strong>，不需要传递 <code>cls</code> 参数</p>
+</li>
+<li><p><strong>在方法内部</strong></p>
+<ul>
+<li>可以通过 <code>cls</code>，<strong>访问类的属性</strong></li>
+<li>也可以通过 <code>cls</code>，<strong>调用其他的类方法</strong></li>
+</ul>
+</li>
+</ul>
+<p> <strong>示例需求</strong></p>
+<ul>
+<li><p>定义一个 <strong>工具类</strong></p>
+</li>
+<li><p>每件工具都有自己的 <code>name</code></p>
+</li>
+<li><p><strong>需求</strong>－在 <strong>类</strong> 封装一个 <code>show_tool_count</code> 的类方法，输出使用当前这个类，创建的对象个数</p>
+<pre class="line-numbers language-python"><code class="language-python">@classmethod
+<span class="token keyword">def</span> <span class="token function">show_tool_count</span><span class="token punctuation">(</span>cls<span class="token punctuation">)</span><span class="token punctuation">:</span>
+  <span class="token triple-quoted-string string">'''显示工具对象的总数'''</span>
+  <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'工具对象的总数：{}'</span><span class="token punctuation">.</span>format<span class="token punctuation">(</span>cls<span class="token punctuation">.</span>count<span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<blockquote>
+<p><em>在类方法内部，可以直接使用 <code>cls</code> 访问 *</em>类属性** 或者 <strong>调用类方法*</strong></p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li><p><strong>静态方法</strong></p>
+<ul>
+<li><p>在开发时，如果需要在 <strong>类</strong> 中封装一个方法，这个方法：</p>
+<ul>
+<li>既 <strong>不需要</strong> 访问 <strong>实例属性</strong> 或者调用 <strong>实例方法</strong></li>
+<li>也 <strong>不需要</strong> 访问 <strong>类属性</strong> 或者调用 <strong>类方法</strong></li>
+</ul>
+</li>
+<li><p>这个时候，可以把这个方法封装成一个 <strong>静态方法</strong></p>
+</li>
+</ul>
+<p> <strong>语法如下</strong></p>
+<pre class="line-numbers language-python"><code class="language-python"> @staticmethod
+ <span class="token keyword">def</span> 静态方法<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+     <span class="token keyword">pass</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li><p><strong>静态方法</strong> 需要用 <strong>修饰器</strong> <code>@staticmethod</code> 来标识，<strong>告诉解释器这是一个静态方法</strong></p>
+</li>
+<li><p>通过 <strong>类名</strong>，调用 <strong>静态方法</strong></p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Dog</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
+
+  <span class="token comment" spellcheck="true"># 狗对象计数</span>
+  dog_count <span class="token operator">=</span> <span class="token number">0</span>
+
+  @staticmethod
+  <span class="token keyword">def</span> <span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+
+      <span class="token comment" spellcheck="true"># 不需要访问实例属性也不需要访问类属性的方法</span>
+      <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'狗在跑...'</span><span class="token punctuation">)</span>
+
+  <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> name<span class="token punctuation">)</span><span class="token punctuation">:</span>
+      self<span class="token punctuation">.</span>name <span class="token operator">=</span> name<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+</ul>
+</li>
+<li><p><strong>方法综合案例</strong></p>
+<p> <strong>需求</strong></p>
+<ol>
+<li><p>设计一个 <code>Game</code> 类</p>
+</li>
+<li><p>属性：</p>
+<ul>
+<li>定义一个 <strong>类属性</strong> <code>top_score</code> 记录着游戏的历史最高分</li>
+<li>定义一个 实例属性 <code>player_name</code> 记录 <strong>当前游戏的玩家姓名</strong></li>
+</ul>
+</li>
+<li><p>方法：</p>
+<ul>
+<li><strong>静态方法</strong> <code>show_help</code> 显示游戏帮助信息</li>
+<li><strong>类方法</strong> <code>show_top_score</code> 显示历史最高分</li>
+<li><strong>实例方法</strong> <code>start_game</code> 开始当前玩家的游戏</li>
+</ul>
+</li>
+<li><p>主程序步骤</p>
+<ol>
+<li>查看帮助信息</li>
+<li>查看历史最高分</li>
+<li>创建游戏对象，开始游戏</li>
+</ol>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Game</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
+
+ <span class="token comment" spellcheck="true"># 历史最高分</span>
+ top_score <span class="token operator">=</span> <span class="token number">0</span>
+
+ <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> player_name<span class="token punctuation">)</span><span class="token punctuation">:</span>
+     self<span class="token punctuation">.</span>player_name <span class="token operator">=</span> player_name
+
+ @staticmethod
+ <span class="token keyword">def</span> <span class="token function">show_help</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+     <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'帮助信息：让僵尸进入大门'</span><span class="token punctuation">)</span>
+
+ @classmethod
+ <span class="token keyword">def</span> <span class="token function">show_top_score</span><span class="token punctuation">(</span>cls<span class="token punctuation">)</span><span class="token punctuation">:</span>
+     <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'历史记录 {}'</span><span class="token punctuation">.</span>format<span class="token punctuation">(</span>cls<span class="token punctuation">.</span>top_score<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+ <span class="token keyword">def</span> <span class="token function">start_game</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+     <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'{} 开始游戏'</span><span class="token punctuation">.</span>format<span class="token punctuation">(</span>self<span class="token punctuation">.</span>player_name<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true"># 1. 查看游戏的帮助信息</span>
+Game<span class="token punctuation">.</span>show_help<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true"># 2. 查看历史最高分</span>
+Game<span class="token punctuation">.</span>show_top_score<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true"># 3. 创建游戏对象</span>
+game <span class="token operator">=</span> Game<span class="token punctuation">(</span><span class="token string">'小明'</span><span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true"># 4. 开始游戏</span>
+game<span class="token punctuation">.</span>start_game<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+</ol>
+</li>
+</ol>
+<h2 id="7-继承"><a href="index.html#7-继承" class="headerlink" title="7. 继承"></a>7. 继承</h2><h3 id="7-1-什么是面向对象的继承"><a href="index.html#7-1-什么是面向对象的继承" class="headerlink" title="7.1 什么是面向对象的继承"></a>7.1 什么是面向对象的继承</h3><p>继承（英语：inheritance）是面向对象软件技术当中的一个概念。如果一个类别A“继承自”另一个类别B，就把这个A称为“B的子类别”，而把B称为“A的父类别”也可以称“B是A的超类”。继承可以使得子类别具有父类别的各种属性和方法，而不需要再次编写相同的代码。在令子类别继承父类别的同时，可以重新定义某些属性，并重写某些方法，即覆盖父类别的原有属性和方法，使其获得与父类别不同的功能。另外，为子类别追加新的属性和方法也是常见的做法。 一般静态的面向对象编程语言，继承属于静态的，意即在子类别的行为在编译期就已经决定，无法在执行期扩充。</p>
+<p>字面意思就是：子承父业，合法继承家产，就是如果你是独生子，而且你也很孝顺，不出意外，你会继承你父母所有家产，他们的所有财产都会由你使用（败家子儿除外）。</p>
+<p>那么用一个例子来看一下继承：</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Person</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span>name<span class="token punctuation">,</span>sex<span class="token punctuation">,</span>age<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>name <span class="token operator">=</span> name
+        self<span class="token punctuation">.</span>age <span class="token operator">=</span> age
+        self<span class="token punctuation">.</span>sex <span class="token operator">=</span> sex
+
+<span class="token keyword">class</span> <span class="token class-name">Cat</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span>name<span class="token punctuation">,</span>sex<span class="token punctuation">,</span>age<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>name <span class="token operator">=</span> name
+        self<span class="token punctuation">.</span>age <span class="token operator">=</span> age
+        self<span class="token punctuation">.</span>sex <span class="token operator">=</span> sex
+
+<span class="token keyword">class</span> <span class="token class-name">Dog</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span>name<span class="token punctuation">,</span>sex<span class="token punctuation">,</span>age<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>name <span class="token operator">=</span> name
+        self<span class="token punctuation">.</span>age <span class="token operator">=</span> age
+        self<span class="token punctuation">.</span>sex <span class="token operator">=</span> sex
+
+<span class="token comment" spellcheck="true"># 继承的用法：</span>
+<span class="token keyword">class</span> <span class="token class-name">Aniaml</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span>name<span class="token punctuation">,</span>sex<span class="token punctuation">,</span>age<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            self<span class="token punctuation">.</span>name <span class="token operator">=</span> name
+            self<span class="token punctuation">.</span>age <span class="token operator">=</span> age
+            self<span class="token punctuation">.</span>sex <span class="token operator">=</span> sex
+
+
+<span class="token keyword">class</span> <span class="token class-name">Person</span><span class="token punctuation">(</span>Aniaml<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">pass</span>
+
+<span class="token keyword">class</span> <span class="token class-name">Cat</span><span class="token punctuation">(</span>Aniaml<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">pass</span>
+
+<span class="token keyword">class</span> <span class="token class-name">Dog</span><span class="token punctuation">(</span>Aniaml<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">pass</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>继承的有点也是显而易见的：</p>
+<ol>
+<li>增加了类的耦合性（耦合性不宜多，宜精）。</li>
+<li>减少了重复代码。</li>
+<li>使得代码更加规范化，合理化。</li>
+</ol>
+<h3 id="7-2-继承的分类"><a href="index.html#7-2-继承的分类" class="headerlink" title="7.2 继承的分类"></a>7.2 继承的分类</h3><p>就像上面的例子：</p>
+<p>Aminal 叫做父类,基类,超类。<br>Person Cat Dog: 子类，派生类。<br>继承：可以分<strong>单继承，多继承</strong>。</p>
+<p>这里需要补充一下python中类的种类（继承需要）：</p>
+<p>在python2x版本中存在两种类.：<br>　　⼀个叫<strong>经典类</strong>. 在python2.2之前. ⼀直使⽤的是经典类. 经典类在基类的根如果什么都不写.<br>　　⼀个叫<strong>新式类</strong>. 在python2.2之后出现了新式类. 新式类的特点是基类的根是object类。<br>python3x版本中只有一种类：<br>python3中使⽤的都是<strong>新式类</strong>. 如果基类谁都不继承. 那这个类会默认继承 object</p>
+<h3 id="7-3-单继承"><a href="index.html#7-3-单继承" class="headerlink" title="7.3 单继承"></a>7.3 单继承</h3><p><span style="font-size:23px;"><strong>类名，对象执行父类方法</strong></span></p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Aniaml</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    type_name <span class="token operator">=</span> <span class="token string">'动物类'</span>
+
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span>name<span class="token punctuation">,</span>sex<span class="token punctuation">,</span>age<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            self<span class="token punctuation">.</span>name <span class="token operator">=</span> name
+            self<span class="token punctuation">.</span>age <span class="token operator">=</span> age
+            self<span class="token punctuation">.</span>sex <span class="token operator">=</span> sex
+
+    <span class="token keyword">def</span> <span class="token function">eat</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'吃东西'</span><span class="token punctuation">)</span>
+
+
+<span class="token keyword">class</span> <span class="token class-name">Person</span><span class="token punctuation">(</span>Aniaml<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">pass</span>
+
+
+<span class="token keyword">class</span> <span class="token class-name">Cat</span><span class="token punctuation">(</span>Aniaml<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">pass</span>
+
+
+<span class="token keyword">class</span> <span class="token class-name">Dog</span><span class="token punctuation">(</span>Aniaml<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">pass</span>
+
+<span class="token comment" spellcheck="true"># 类名：</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>Person<span class="token punctuation">.</span>type_name<span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># 可以调用父类的属性，方法。</span>
+Person<span class="token punctuation">.</span>eat<span class="token punctuation">(</span><span class="token number">111</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>Person<span class="token punctuation">.</span>type_name<span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true"># 对象：</span>
+<span class="token comment" spellcheck="true"># 实例化对象</span>
+p1 <span class="token operator">=</span> Person<span class="token punctuation">(</span><span class="token string">'春哥'</span><span class="token punctuation">,</span><span class="token string">'男'</span><span class="token punctuation">,</span><span class="token number">18</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>p1<span class="token punctuation">.</span>__dict__<span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 对象执行类的父类的属性，方法。</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>p1<span class="token punctuation">.</span>type_name<span class="token punctuation">)</span>
+p1<span class="token punctuation">.</span>type_name <span class="token operator">=</span> <span class="token string">'666'</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>p1<span class="token punctuation">)</span>
+p1<span class="token punctuation">.</span>eat<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><span style="font-size:23px;"><strong>执行顺序</strong></span></p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Aniaml</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    type_name <span class="token operator">=</span> <span class="token string">'动物类'</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span>name<span class="token punctuation">,</span>sex<span class="token punctuation">,</span>age<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            self<span class="token punctuation">.</span>name <span class="token operator">=</span> name
+            self<span class="token punctuation">.</span>age <span class="token operator">=</span> age
+            self<span class="token punctuation">.</span>sex <span class="token operator">=</span> sex
+
+    <span class="token keyword">def</span> <span class="token function">eat</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'吃东西'</span><span class="token punctuation">)</span>
+
+<span class="token keyword">class</span> <span class="token class-name">Person</span><span class="token punctuation">(</span>Aniaml<span class="token punctuation">)</span><span class="token punctuation">:</span>
+
+    <span class="token keyword">def</span> <span class="token function">eat</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'%s 吃饭'</span><span class="token operator">%</span>self<span class="token punctuation">.</span>name<span class="token punctuation">)</span>
+
+<span class="token keyword">class</span> <span class="token class-name">Cat</span><span class="token punctuation">(</span>Aniaml<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">pass</span>
+
+<span class="token keyword">class</span> <span class="token class-name">Dog</span><span class="token punctuation">(</span>Aniaml<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">pass</span>
+
+p1 <span class="token operator">=</span> Person<span class="token punctuation">(</span><span class="token string">'barry'</span><span class="token punctuation">,</span><span class="token string">'男'</span><span class="token punctuation">,</span><span class="token number">18</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 实例化对象时必须执行__init__方法,类中没有，从父类找，父类没有，从object类中找。</span>
+p1<span class="token punctuation">.</span>eat<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 先要执行自己类中的eat方法，自己类没有才能执行父类中的方法。</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><span style="font-size:23px;"><strong>同时执行类以及父类方法</strong></span></p>
+<p>方法一：</p>
+<p>如果想执行父类的func方法，这个方法并且子类中夜用，那么就在子类的方法中写上：</p>
+<p>父类.func(对象,其他参数)</p>
+<p>举例说明：</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Aniaml</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    type_name <span class="token operator">=</span> <span class="token string">'动物类'</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span>name<span class="token punctuation">,</span>sex<span class="token punctuation">,</span>age<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            self<span class="token punctuation">.</span>name <span class="token operator">=</span> name
+            self<span class="token punctuation">.</span>age <span class="token operator">=</span> age
+            self<span class="token punctuation">.</span>sex <span class="token operator">=</span> sex
+
+    <span class="token keyword">def</span> <span class="token function">eat</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'吃东西'</span><span class="token punctuation">)</span>
+
+<span class="token keyword">class</span> <span class="token class-name">Person</span><span class="token punctuation">(</span>Aniaml<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span>name<span class="token punctuation">,</span>sex<span class="token punctuation">,</span>age<span class="token punctuation">,</span>mind<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">'''
+        self = p1
+        name = '春哥'
+        sex = 'laddboy'
+        age = 18
+        mind = '有思想'
+        '''</span>
+        <span class="token comment" spellcheck="true"># Aniaml.__init__(self,name,sex,age)  # 方法一</span>
+        self<span class="token punctuation">.</span>mind <span class="token operator">=</span> mind
+
+    <span class="token keyword">def</span> <span class="token function">eat</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        super<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>eat<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'%s 吃饭'</span><span class="token operator">%</span>self<span class="token punctuation">.</span>name<span class="token punctuation">)</span>
+<span class="token keyword">class</span> <span class="token class-name">Cat</span><span class="token punctuation">(</span>Aniaml<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">pass</span>
+
+<span class="token keyword">class</span> <span class="token class-name">Dog</span><span class="token punctuation">(</span>Aniaml<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">pass</span>
+
+<span class="token comment" spellcheck="true"># 方法一： Aniaml.__init__(self,name,sex,age)</span>
+<span class="token comment" spellcheck="true"># p1 = Person('春哥','laddboy',18,'有思想')</span>
+<span class="token comment" spellcheck="true"># print(p1.__dict__)</span>
+
+<span class="token comment" spellcheck="true"># 对于方法一如果不理解：</span>
+<span class="token comment" spellcheck="true"># def func(self):</span>
+<span class="token comment" spellcheck="true">#     print(self)</span>
+<span class="token comment" spellcheck="true"># self = 3</span>
+<span class="token comment" spellcheck="true"># func(self)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>方法二：</p>
+<p>利用super，super().func(参数)</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Aniaml</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    type_name <span class="token operator">=</span> <span class="token string">'动物类'</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span>name<span class="token punctuation">,</span>sex<span class="token punctuation">,</span>age<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            self<span class="token punctuation">.</span>name <span class="token operator">=</span> name
+            self<span class="token punctuation">.</span>age <span class="token operator">=</span> age
+            self<span class="token punctuation">.</span>sex <span class="token operator">=</span> sex
+
+    <span class="token keyword">def</span> <span class="token function">eat</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'吃东西'</span><span class="token punctuation">)</span>
+
+<span class="token keyword">class</span> <span class="token class-name">Person</span><span class="token punctuation">(</span>Aniaml<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span>name<span class="token punctuation">,</span>sex<span class="token punctuation">,</span>age<span class="token punctuation">,</span>mind<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">'''
+        self = p1
+        name = '春哥'
+        sex = 'laddboy'
+        age = 18
+        mind = '有思想'
+        '''</span>
+        <span class="token comment" spellcheck="true"># super(Person,self).__init__(name,sex,age)  # 方法二</span>
+        super<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>__init__<span class="token punctuation">(</span>name<span class="token punctuation">,</span>sex<span class="token punctuation">,</span>age<span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># 方法二</span>
+        self<span class="token punctuation">.</span>mind <span class="token operator">=</span> mind
+
+    <span class="token keyword">def</span> <span class="token function">eat</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        super<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>eat<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'%s 吃饭'</span><span class="token operator">%</span>self<span class="token punctuation">.</span>name<span class="token punctuation">)</span>
+<span class="token keyword">class</span> <span class="token class-name">Cat</span><span class="token punctuation">(</span>Aniaml<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">pass</span>
+
+<span class="token keyword">class</span> <span class="token class-name">Dog</span><span class="token punctuation">(</span>Aniaml<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">pass</span>
+<span class="token comment" spellcheck="true"># p1 = Person('春哥','laddboy',18,'有思想')</span>
+<span class="token comment" spellcheck="true"># print(p1.__dict__)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>单继承练习题：</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># 1</span>
+<span class="token keyword">class</span> <span class="token class-name">Base</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> num<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>num <span class="token operator">=</span> num
+    <span class="token keyword">def</span> <span class="token function">func1</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span>self<span class="token punctuation">.</span>num<span class="token punctuation">)</span>
+
+<span class="token keyword">class</span> <span class="token class-name">Foo</span><span class="token punctuation">(</span>Base<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">pass</span>
+obj <span class="token operator">=</span> Foo<span class="token punctuation">(</span><span class="token number">123</span><span class="token punctuation">)</span>
+obj<span class="token punctuation">.</span>func1<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 123 运⾏的是Base中的func1  </span>
+
+<span class="token comment" spellcheck="true"># 2      </span>
+<span class="token keyword">class</span> <span class="token class-name">Base</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> num<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>num <span class="token operator">=</span> num
+    <span class="token keyword">def</span> <span class="token function">func1</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span>self<span class="token punctuation">.</span>num<span class="token punctuation">)</span>
+<span class="token keyword">class</span> <span class="token class-name">Foo</span><span class="token punctuation">(</span>Base<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">func1</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Foo. func1"</span><span class="token punctuation">,</span> self<span class="token punctuation">.</span>num<span class="token punctuation">)</span>
+obj <span class="token operator">=</span> Foo<span class="token punctuation">(</span><span class="token number">123</span><span class="token punctuation">)</span>
+obj<span class="token punctuation">.</span>func1<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># Foo. func1 123 运⾏的是Foo中的func1       </span>
+
+<span class="token comment" spellcheck="true"># 3         </span>
+<span class="token keyword">class</span> <span class="token class-name">Base</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> num<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>num <span class="token operator">=</span> num
+    <span class="token keyword">def</span> <span class="token function">func1</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span>self<span class="token punctuation">.</span>num<span class="token punctuation">)</span>
+<span class="token keyword">class</span> <span class="token class-name">Foo</span><span class="token punctuation">(</span>Base<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">func1</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Foo. func1"</span><span class="token punctuation">,</span> self<span class="token punctuation">.</span>num<span class="token punctuation">)</span>
+obj <span class="token operator">=</span> Foo<span class="token punctuation">(</span><span class="token number">123</span><span class="token punctuation">)</span>
+obj<span class="token punctuation">.</span>func1<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># Foo. func1 123 运⾏的是Foo中的func1     </span>
+<span class="token comment" spellcheck="true"># 4</span>
+<span class="token keyword">class</span> <span class="token class-name">Base</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> num<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>num <span class="token operator">=</span> num
+    <span class="token keyword">def</span> <span class="token function">func1</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span>self<span class="token punctuation">.</span>num<span class="token punctuation">)</span>
+        self<span class="token punctuation">.</span>func2<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">def</span> <span class="token function">func2</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Base.func2"</span><span class="token punctuation">)</span>
+<span class="token keyword">class</span> <span class="token class-name">Foo</span><span class="token punctuation">(</span>Base<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">func2</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Foo.func2"</span><span class="token punctuation">)</span>
+obj <span class="token operator">=</span> Foo<span class="token punctuation">(</span><span class="token number">123</span><span class="token punctuation">)</span>
+obj<span class="token punctuation">.</span>func1<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 123 Foo.func2 func1是Base中的 func2是⼦类中的 </span>
+<span class="token comment" spellcheck="true"># 再来</span>
+<span class="token keyword">class</span> <span class="token class-name">Base</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> num<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>num <span class="token operator">=</span> num
+    <span class="token keyword">def</span> <span class="token function">func1</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span>self<span class="token punctuation">.</span>num<span class="token punctuation">)</span>
+        self<span class="token punctuation">.</span>func2<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">def</span> <span class="token function">func2</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token number">111</span><span class="token punctuation">,</span> self<span class="token punctuation">.</span>num<span class="token punctuation">)</span>
+<span class="token keyword">class</span> <span class="token class-name">Foo</span><span class="token punctuation">(</span>Base<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">func2</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token number">222</span><span class="token punctuation">,</span> self<span class="token punctuation">.</span>num<span class="token punctuation">)</span>
+lst <span class="token operator">=</span> <span class="token punctuation">[</span>Base<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">,</span> Base<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">,</span> Foo<span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+<span class="token keyword">for</span> obj <span class="token keyword">in</span> lst<span class="token punctuation">:</span>
+    obj<span class="token punctuation">.</span>func2<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 111 1 | 111 2 | 222 3</span>
+
+<span class="token comment" spellcheck="true"># 再来</span>
+<span class="token keyword">class</span> <span class="token class-name">Base</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> num<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>num <span class="token operator">=</span> num
+    <span class="token keyword">def</span> <span class="token function">func1</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span>self<span class="token punctuation">.</span>num<span class="token punctuation">)</span>
+        self<span class="token punctuation">.</span>func2<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">def</span> <span class="token function">func2</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token number">111</span><span class="token punctuation">,</span> self<span class="token punctuation">.</span>num<span class="token punctuation">)</span>
+<span class="token keyword">class</span> <span class="token class-name">Foo</span><span class="token punctuation">(</span>Base<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">func2</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token number">222</span><span class="token punctuation">,</span> self<span class="token punctuation">.</span>num<span class="token punctuation">)</span>
+lst <span class="token operator">=</span> <span class="token punctuation">[</span>Base<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">,</span> Base<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">,</span> Foo<span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+<span class="token keyword">for</span> obj <span class="token keyword">in</span> lst<span class="token punctuation">:</span>
+    obj<span class="token punctuation">.</span>func1<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 拿笔来吧. 好好算</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="7-4-多继承"><a href="index.html#7-4-多继承" class="headerlink" title="7.4 多继承"></a>7.4 多继承</h3><pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">ShenXian</span><span class="token punctuation">:</span> <span class="token comment" spellcheck="true"># 神仙</span>
+    <span class="token keyword">def</span> <span class="token function">fei</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"神仙都会⻜"</span><span class="token punctuation">)</span>
+<span class="token keyword">class</span> <span class="token class-name">Monkey</span><span class="token punctuation">:</span> <span class="token comment" spellcheck="true"># 猴</span>
+    <span class="token keyword">def</span> <span class="token function">chitao</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"猴⼦喜欢吃桃⼦"</span><span class="token punctuation">)</span>
+<span class="token keyword">class</span> <span class="token class-name">SunWukong</span><span class="token punctuation">(</span>ShenXian<span class="token punctuation">,</span> Monkey<span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token comment" spellcheck="true"># 孙悟空是神仙, 同时也是⼀只猴</span>
+    <span class="token keyword">pass</span>
+sxz <span class="token operator">=</span> SunWukong<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 孙悟空</span>
+sxz<span class="token punctuation">.</span>chitao<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 会吃桃⼦</span>
+sxz<span class="token punctuation">.</span>fei<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 会⻜</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>此时, 孙悟空是⼀只猴⼦, 同时也是⼀个神仙. 那孙悟空继承了这两个类. 孙悟空⾃然就可以执⾏这两个类中的⽅法. 多继承⽤起来简单. 也很好理解. 但是多继承中, 存在着这样⼀个问题. 当两个⽗类中出现了重名⽅法的时候. 这时该怎么办呢? 这时就涉及到如何查找⽗类⽅法的这么⼀个问题.即MRO(method resolution order) 问题. 在python中这是⼀个很复杂的问题. 因为在不同的python版本中使⽤的是不同的算法来完成MRO的.</p>
+<p>这里需要补充一下python中类的种类（继承需要）：</p>
+<p>在python2x版本中存在两种类.：<br>　　⼀个叫<strong>经典类</strong>. 在python2.2之前. ⼀直使⽤的是经典类. 经典类在基类的根如果什么都不写.<br>　　⼀个叫<strong>新式类</strong>. 在python2.2之后出现了新式类. 新式类的特点是基类的根是object类。<br>python3x版本中只有一种类：<br>python3中使⽤的都是<strong>新式类</strong>. 如果基类谁都不继承. 那这个类会默认继承 object</p>
+<p><span style="font-size:23px;"><strong>经典类的多继承</strong></span></p>
+<p>虽然在python3中已经不存在经典类了. 但是经典类的MRO最好还是学⼀学. 这是⼀种树形结构遍历的⼀个最直接的案例. 在python的继承体系中. 我们可以把类与类继承关系化成⼀个树形结构的图. 来, 上代码:</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">A</span><span class="token punctuation">:</span>
+    <span class="token keyword">pass</span>
+<span class="token keyword">class</span> <span class="token class-name">B</span><span class="token punctuation">(</span>A<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">pass</span>
+<span class="token keyword">class</span> <span class="token class-name">C</span><span class="token punctuation">(</span>A<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">pass</span>
+<span class="token keyword">class</span> <span class="token class-name">D</span><span class="token punctuation">(</span>B<span class="token punctuation">,</span> C<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">pass</span>
+<span class="token keyword">class</span> <span class="token class-name">E</span><span class="token punctuation">:</span>
+    <span class="token keyword">pass</span>
+<span class="token keyword">class</span> <span class="token class-name">F</span><span class="token punctuation">(</span>D<span class="token punctuation">,</span> E<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">pass</span>
+<span class="token keyword">class</span> <span class="token class-name">G</span><span class="token punctuation">(</span>F<span class="token punctuation">,</span> D<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">pass</span>
+<span class="token keyword">class</span> <span class="token class-name">H</span><span class="token punctuation">:</span>
+    <span class="token keyword">pass</span>
+<span class="token keyword">class</span> <span class="token class-name">Foo</span><span class="token punctuation">(</span>H<span class="token punctuation">,</span> G<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">pass</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>对付这种 mro 画图就可以:</p>
+<p><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="672520853.png" alt=""></p>
+<p>继承关系图已经有了. 那如何进⾏查找呢? 记住⼀个原则. 在经典类中采⽤的是深度优先，遍历⽅案. 什么是深度优先. 就是⼀条路走到头. 然后再回来. 继续找下⼀个:</p>
+<p><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="2110674000.png" alt=""></p>
+<p>图中每个圈都是准备要送鸡蛋的住址. 箭头和⿊线表⽰线路. 那送鸡蛋的顺序告诉你入⼝在最下⾯R. 并且必须从左往右送. 那怎么送呢?</p>
+<p><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="706493974.png" alt=""></p>
+<p>如图. 肯定是按照123456这样的顺序来送. 那这样的顺序就叫深度优先遍历. ⽽如果是142356呢? 这种被称为⼴度优先遍历. 好了. 深度优先就说这么多. 那么上⾯那个图怎么找的呢? MRO是什么呢? 很简单. 记住. 从头开始. 从左往右. ⼀条路跑到头, 然后回头. 继续⼀条路跑到头. 就是经典类的MRO算法. </p>
+<p>类的MRO: Foo-&gt; H -&gt; G -&gt; F -&gt; E -&gt; D -&gt; B -&gt; A -&gt; C. 你猜对了么?</p>
+<p><span style="font-size:23px;"><strong>新式类的多继承</strong></span></p>
+<p><strong>mro序列</strong></p>
+<p>MRO是一个有序列表L，在类被创建时就计算出来。<br>通用计算公式为：</p>
+<pre><code>mro(Child(Base1，Base2)) = [ Child ] + merge( mro(Base1), mro(Base2), [ Base1, Base2] )
+（其中Child继承自Base1, Base2）</code></pre><p>如果继承至一个基类：class B(A)<br>这时B的mro序列为:</p>
+<pre><code>mro( B ) = mro( B(A) )
+= [B] + merge( mro(A) + [A] )
+= [B] + merge( [A] + [A] )
+= [B,A]</code></pre><p>如果继承至多个基类：class B(A1, A2, A3 …)<br>这时B的mro序列:</p>
+<pre><code>mro(B) = mro( B(A1, A2, A3 …) )
+= [B] + merge( mro(A1), mro(A2), mro(A3) ..., [A1, A2, A3] )
+= ...</code></pre><p>计算结果为列表，列表中至少有一个元素即类自己，如上述示例[A1,A2,A3]。merge操作是C3算法的核心。</p>
+<p><strong>表头和表尾</strong></p>
+<ul>
+<li><p>表头</p>
+<ul>
+<li>列表的第一个元素</li>
+</ul>
+</li>
+<li><p>表尾</p>
+<ul>
+<li>列表中表头以外的元素集合（可以为空）</li>
+</ul>
+</li>
+<li><p>示例 </p>
+<ul>
+<li>列表：[A, B, C] <ul>
+<li>表头是A，表尾是B和C</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>列表之间的 + 操作</strong></p>
+<ul>
+<li>+操作：<ul>
+<li>[A] + [B] = [A, B]</li>
+</ul>
+</li>
+</ul>
+<p>merge操作示例:</p>
+<pre><code>如计算merge( [E,O], [C,E,F,O], [C] )
+有三个列表 ：  ①      ②          ③
+merge不为空，取出第一个列表列表①的表头E，进行判断                              
+   各个列表的表尾分别是[O], [E,F,O]，E在这些表尾的集合中，因而跳过当前当前列表
+取出列表②的表头C，进行判断
+   C不在各个列表的集合中，因而将C拿出到merge外，并从所有表头删除
+   merge( [E,O], [C,E,F,O], [C]) = [C] + merge( [E,O], [E,F,O] )
+进行下一次新的merge操作 ......</code></pre><p><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="1223309032.png" alt=""></p>
+<p>计算mor(A)方式:</p>
+<pre><code>mro(A) = mro( A(B,C) )
+
+原式= [A] + merge( mro(B),mro(C),[B,C] )
+
+  mro(B) = mro( B(D,E) )
+         = [B] + merge( mro(D), mro(E), [D,E] )  # 多继承
+         = [B] + merge( [D,O] , [E,O] , [D,E] )  # 单继承mro(D(O))=[D,O]
+         = [B,D] + merge( [O] , [E,O]  ,  [E] )  # 拿出并删除D
+         = [B,D,E] + merge([O] ,  [O])
+         = [B,D,E,O]
+
+  mro(C) = mro( C(E,F) )
+         = [C] + merge( mro(E), mro(F), [E,F] )
+         = [C] + merge( [E,O] , [F,O] , [E,F] )
+         = [C,E] + merge( [O] , [F,O]  ,  [F] )  # 跳过O，拿出并删除
+         = [C,E,F] + merge([O] ,  [O])
+         = [C,E,F,O]
+
+原式= [A] + merge( [B,D,E,O], [C,E,F,O], [B,C])
+    = [A,B] + merge( [D,E,O], [C,E,F,O],   [C])
+    = [A,B,D] + merge( [E,O], [C,E,F,O],   [C])  # 跳过E
+    = [A,B,D,C] + merge([E,O],  [E,F,O])
+    = [A,B,D,C,E] + merge([O],    [F,O])  # 跳过O
+    = [A,B,D,C,E,F] + merge([O],    [O])
+    = [A,B,D,C,E,F,O]</code></pre><p>结果OK. 那既然python提供了. 为什么我们还要如此⿇烦的计算MRO呢? 因为笔试…….你在笔试的时候, 是没有电脑的. 所以这个算法要知道. 并且简单的计算要会. 真实项⽬开发的时候很少有⼈这么去写代码. </p>
+<p>这个说完了. 那C3到底怎么看更容易呢? 其实很简单. C3是把我们多个类产⽣的共同继承留到最后去找. 所以. 我们也可以从图上来看到相关的规律. 这个要⼤家⾃⼰多写多画图就能感觉到了. 但是如果没有所谓的共同继承关系. 那⼏乎就当成是深度遍历就可以了 </p>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
+            </div>
+            <hr/>
+
+            
+            <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.88rem;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="index.html#rewardModal" class="reward-link modal-trigger btn-floating btn-large waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fa fa-close"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力!</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="index.html#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="index.html#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="../../../../medias/reward/alipay.bmp" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="../../../../medias/reward/wechat.bmp" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+            
+
+            <link rel="stylesheet" type="text/css" href="../../../../libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    <div class="social-share" data-disabled="qzone" data-wechat-qrcode-helper="<p>微信里点“发现”->“扫一扫”二维码便可查看分享。</p>"></div>
+    
+</div>
+
+<script src="../../../../libs/share/js/social-share.min.js"></script>
+
+            
+            
+            
+            <div class="reprint1">
+                <p>
+                    <span class="reprint1-tip">
+                        <i class="fa fa-exclamation-circle"></i>&nbsp;&nbsp;转载请注明:
+                    </span>
+                    <a href="../../../../index.html" class="b-link-green">浩大大</a>
+                    <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
+                    <a href="index.html" class="b-link-green">Python面向对象</a>
+                </p>
+            </div>
+
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+        <style>
+    .valine-card {
+        margin: 1.5rem auto;
+    }
+
+    .valine-card .card-content {
+        padding: 20px 20px 5px 20px;
+    }
+    /* valine 评论框增加背景图片 */
+    #vcomments textarea {
+        box-sizing: border-box;
+        background: url("") 100% 100% no-repeat;
+    }
+
+    #vcomments input[type=text],
+    #vcomments input[type=email],
+    #vcomments input[type=url],
+    #vcomments textarea {
+        box-sizing: border-box;
+    }
+
+    #vcomments p {
+        margin: 2px 2px 10px;
+        font-size: 1.05rem;
+        line-height: 1.78rem;
+    }
+
+    #vcomments blockquote p {
+        text-indent: 0.2rem;
+    }
+
+    #vcomments a {
+        padding: 0 2px;
+        color: #42b983;
+        font-weight: 500;
+        text-decoration: underline;
+    }
+
+    #vcomments img {
+        max-width: 100%;
+        height: auto;
+        cursor: pointer;
+    }
+
+    #vcomments ol li {
+        list-style-type: decimal;
+    }
+
+    #vcomments ol,
+    ul {
+        display: block;
+        padding-left: 2em;
+        word-spacing: 0.05rem;
+    }
+
+    #vcomments ul li,
+    ol li {
+        display: list-item;
+        line-height: 1.8rem;
+        font-size: 1rem;
+    }
+
+    #vcomments ul li {
+        list-style-type: disc;
+    }
+
+    #vcomments ul ul li {
+        list-style-type: circle;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    #vcomments table, th, td {
+        border: 0;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments h1 {
+        font-size: 1.85rem;
+        font-weight: bold;
+        line-height: 2.2rem;
+    }
+
+    #vcomments h2 {
+        font-size: 1.65rem;
+        font-weight: bold;
+        line-height: 1.9rem;
+    }
+
+    #vcomments h3 {
+        font-size: 1.45rem;
+        font-weight: bold;
+        line-height: 1.7rem;
+    }
+
+    #vcomments h4 {
+        font-size: 1.25rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    #vcomments h5 {
+        font-size: 1.1rem;
+        font-weight: bold;
+        line-height: 1.4rem;
+    }
+
+    #vcomments h6 {
+        font-size: 1rem;
+        line-height: 1.3rem;
+    }
+
+    #vcomments p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    #vcomments hr {
+        margin: 12px 0;
+        border: 0;
+        border-top: 1px solid #ccc;
+    }
+
+    #vcomments blockquote {
+        margin: 15px 0;
+        border-left: 5px solid #42b983;
+        padding: 1rem 0.8rem 0.3rem 0.8rem;
+        color: #666;
+        background-color: rgba(66, 185, 131, .1);
+    }
+
+    #vcomments pre {
+        font-family: monospace, monospace;
+        padding: 1.2em;
+        margin: .5em 0;
+        background: #272822;
+        overflow: auto;
+        border-radius: 0.3em;
+        tab-size: 4;
+    }
+
+    #vcomments code {
+        font-family: monospace, monospace;
+        padding: 1px 3px;
+        font-size: 0.92rem;
+        color: #e96900;
+        background-color: #f8f8f8;
+        border-radius: 2px;
+    }
+
+    #vcomments pre code {
+        font-family: monospace, monospace;
+        padding: 0;
+        color: #e8eaf6;
+        background-color: #272822;
+    }
+
+    #vcomments pre[class*="language-"] {
+        padding: 1.2em;
+        margin: .5em 0;
+    }
+
+    #vcomments code[class*="language-"],
+    pre[class*="language-"] {
+        color: #e8eaf6;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+
+    #vcomments b,
+    strong {
+        font-weight: bold;
+    }
+
+    #vcomments dfn {
+        font-style: italic;
+    }
+
+    #vcomments small {
+        font-size: 85%;
+    }
+
+    #vcomments cite {
+        font-style: normal;
+    }
+
+    #vcomments mark {
+        background-color: #fcf8e3;
+        padding: .2em;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+
+    /* 修复评论第一行位置错位 */
+    .v .vlist .vcard {
+    padding-top: 2.5em !important ;
+    }
+</style>
+
+<div class="card valine-card" data-aos="fade-up">
+    <div id="vcomments" class="card-content"></div>
+</div>
+
+<script src="../../../../libs/valine/av-min.js"></script>
+<script src="../../../../libs/valine/Valine.min.js"></script>
+<!-- <link rel="stylesheet" type="text/css" href="/libs//libs/jQuery-emoji/dist/css/jquery.emoji.css">
+<script src="/libs//libs/jQuery-emoji/dist/js/jquery.emoji.min.js"></script>
+<script src="/libs//libs/jQuery-emoji/dist/js/emoji.list.js"></script> -->
+<script>
+    new Valine({
+        el: '#vcomments',
+        appId: '0OwJ6sYhnNL3hQRByzwu5KXn-9Nh9j0Va',
+        appKey: 'R231rXzsKTmBAERfHEurHHw3',
+        notify: 'false' === 'true',
+        verify: 'false' === 'true',
+        visitor: 'true' === 'true',
+        avatar: 'mm',
+        pageSize: '10',
+        lang: 'zh-cn',
+        placeholder: '欢迎交流讨论～',
+
+    });
+
+//     function parse_emoji() {
+//     jQuery(".vcontent").emojiParse({
+//       basePath: '/libs/jQuery-emoji/images/emoji',
+//       icons: emojiLists   // 注：详见 js/emoji.list.js
+//     });
+//   }
+  
+//   setTimeout(function() {
+//     // jQuery emoji 解析
+//     parse_emoji();
+//     // jquery emoji 初始化
+//     jQuery(".veditor").emoji({
+//       showTab: true,
+//       animation: 'slide',
+//       basePath: '/libs/jQuery-emoji/images/emoji',
+//       icons: emojiLists  // 注：详见 js/emoji.list.js
+//     });
+//     jQuery(".vmore").on("click", function() {
+//       setTimeout(function() {
+//         parse_emoji();
+//       }, 500);
+//     });
+//   }, 800)
+
+</script>
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="../../23/python-mian-xiang-dui-xiang-san-da-te-xing/index.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="../../../../medias/featureimages/15.jpg" class="responsive-img" alt="Python面向对象三大特性">
+                        
+                        <span class="card-title">Python面向对象三大特性</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            Python面向对象的三大特性详解
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-12-23
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="https://senqi666.gitee.io/categories/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" class="post-category" target="_blank">
+                                    面向对象
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="https://senqi666.gitee.io/tags/Python/" target="_blank">
+                        <span class="chip bg-color">Python</span>
+                    </a>
+                    
+                    <a href="https://senqi666.gitee.io/tags/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" target="_blank">
+                        <span class="chip bg-color">面向对象</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="../../17/jiang-ben-di-dai-ma-shang-chuan-dao-ma-yun-gitee-huo-github/index.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="../../../../medias/featureimages/1.jpg" class="responsive-img" alt="将本地项目代码上传到码云(Gitee)或GitHub">
+                        
+                        <span class="card-title">将本地项目代码上传到码云(Gitee)或GitHub</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            上传本地代码到码云或GitHub方便管理和查看
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-12-17
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="https://senqi666.gitee.io/categories/Gitee/" class="post-category" target="_blank">
+                                    Gitee
+                                </a>
+                            
+                            <a href="https://senqi666.gitee.io/categories/Gitee/GitHub/" class="post-category" target="_blank">
+                                    GitHub
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="https://senqi666.gitee.io/tags/Gitee/" target="_blank">
+                        <span class="chip bg-color">Gitee</span>
+                    </a>
+                    
+                    <a href="https://senqi666.gitee.io/tags/GitHub/" target="_blank">
+                        <span class="chip bg-color">GitHub</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('50')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: 浩大大<br />'
+            + '作者: 浩大大<br />'
+            + '链接: <a href="https://senqi666.gitee.io/2019/12/18/python-mian-xiang-dui-xiang/'&#32;+&#32;url&#32;+&#32;'">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="fa fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fa fa-list"></i>
+    </a>
+</div>
+
+
+<script src="../../../../libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            // headingsOffset: -205,
+            headingSelector: 'h1, h2, h3, h4, h5'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h1, h2, h3, h4, h5').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).slideUp(500);
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).slideDown(500);
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+    
+
+</main>
+
+
+        <footer class="page-footer bg-color">
+    <div class="container row center-align">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&copy; 2019 森七. 
+
+            <br>
+            <span id="sitetime"></span><span class="my-face">ღゝ◡╹)ノ♡</span>
+            <br>
+
+            
+
+            
+                    
+                        <span id="busuanzi_container_site_pv" style='display:none'></span>
+                        总访问量: <span id="busuanzi_value_site_pv" class="white-color"></span>
+                    
+        
+                    
+                        <span id="busuanzi_container_site_uv" style='display:none'></span>
+                        人次&nbsp; | &nbsp;访客人数: <span id="busuanzi_value_site_uv" class="white-color"></span> 人
+                    
+    
+            
+
+            
+                &nbsp; | &nbsp;字数统计:&nbsp;
+                <span class="white-color">61.1k</span> 字
+            
+
+            
+            <br>
+
+        </div>
+
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/senqi-666" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fa fa-github"></i>
+    </a>
+
+
+ 
+    <a href="https://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=1428101088@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fa fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+    <a href="http://wpa.qq.com/msgrd?v=3&uin=1428101088&site=qq&menu=yes" class="tooltipped" target="_blank" data-tooltip="访问我的QQ空间" data-position="top" data-delay="50">
+        <i class="fa fa-qq"></i>
+    </a>
+
+
+
+</div>
+
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+<script language=javascript>
+    function siteTime() {
+        window.setTimeout("siteTime()", 1000);
+        var seconds = 1000;
+        var minutes = seconds * 60;
+        var hours = minutes * 60;
+        var days = hours * 24;
+        var years = days * 365;
+        var today = new Date();
+        var todayYear = today.getFullYear();
+        var todayMonth = today.getMonth() + 1;
+        var todayDate = today.getDate();
+        var todayHour = today.getHours();
+        var todayMinute = today.getMinutes();
+        var todaySecond = today.getSeconds();
+
+        /* Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)
+        year - 作为date对象的年份，为4位年份值
+        month - 0-11之间的整数，做为date对象的月份
+        day - 1-31之间的整数，做为date对象的天数
+        hours - 0(午夜24点)-23之间的整数，做为date对象的小时数
+        minutes - 0-59之间的整数，做为date对象的分钟数
+        seconds - 0-59之间的整数，做为date对象的秒数
+        microseconds - 0-999之间的整数，做为date对象的毫秒数 */
+
+        var t1 = Date.UTC(2019, 11, 20, 00, 00, 00); //北京时间2019-8-1 00:00:00
+        var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+        var diff = t2 - t1;
+        var diffYears = Math.floor(diff / years);
+        var diffDays = Math.floor((diff / days) - diffYears * 365);
+        var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+        var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) / minutes);
+        var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours - diffMinutes *
+            minutes) / seconds);
+        document.getElementById("sitetime").innerHTML = "本站已勉强运行 " + diffYears + " 年 " + diffDays + " 天 " + diffHours +
+            " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒" ;
+    } /*因为建站时间还没有一年，就将之注释掉了。需要的可以取消*/
+    siteTime();
+</script>
+
+
+
+
+
+
+        <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fa fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="../../../../js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+});
+</script>
+        <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="index.html#!">
+        <i class="fa fa-angle-up"></i>
+    </a>
+</div>
+
+
+        <script src="../../../../libs/materialize/materialize.min.js"></script>
+        <script src="../../../../libs/masonry/masonry.pkgd.min.js"></script>
+        <script src="../../../../libs/aos/aos.js"></script>
+        <script src="../../../../libs/scrollprogress/scrollProgress.min.js"></script>
+        <script src="../../../../libs/lightGallery/js/lightgallery-all.min.js"></script>
+        <script src="../../../../js/matery.js"></script>
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+
+        
+            <script src="../../../../libs/others/clicklove.js"></script>
+        
+
+        
+            <script async src="../../../../libs/others/busuanzi.pure.mini.js"></script>
+        
+
+        <script type="text/javascript">
+            var OriginTitile = document.title,
+                st;
+            document.addEventListener("visibilitychange", function () {
+                document.hidden ? (document.title = "看不见我🙈~看不见我🙈~", clearTimeout(st)) : (document.title =
+                    "(๑•̀ㅂ•́) ✧被发现了～", st = setTimeout(function () {
+                        document.title = OriginTitile
+                    }, 3e3))
+            })
+        </script>
+
+        
+            <canvas class="fireworks" style="position: fixed; left: 0; top: 0; z-index: 1; pointer-events: none;"></canvas>
+            <script type="text/javascript" src="https://cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script>
+            <script type="text/javascript" src="../../../../js/fireworks.js"></script>
+        
+
+        <!-- 背景樱花飘落特效 -->
+        
+            <script type="text/javascript">
+            //只在桌面版网页启用特效
+            var windowWidth = $(window).width();
+            //if (windowWidth > 768) {
+            document.write('<script type="text/javascript" src="../../../../js/sakura.js"><\/script>');
+            //}
+            </script>
+        
+
+	<!-- 鼠标拖尾特效 -->
+        
+            <script type="text/javascript">
+            //只在桌面版网页启用特效
+            var windowWidth = $(window).width();
+            //if (windowWidth > 768) {
+            document.write('<script type="text/javascript" src="../../../../js/mouseSlip.js"><\/script>');
+            //}
+            </script>
+        
+
+        <!-- 鼠标点击文字特效 -->
+        
+            <script src="../../../../js/wenzi.js" type="text/javascript"></script>
+        
+
+        <!-- 背景雪花飘落特效 -->
+        
+            <script type="text/javascript">
+                var windowWidth = $(window).width();
+                if (windowWidth > 768) {
+                    document.write('<script type="text/javascript" src="../../../../js/xuehuapiaoluo.js"><\/script>');
+                }
+            </script>
+        
+
+        <!-- 在线聊天工具 -->
+        
+            <!--  在线聊天位置自定义 -->
+            <script> 
+                $(document).ready(function () {
+
+                    setInterval(change_Tidio, 50);  
+                    function change_Tidio() { 
+
+                        var tidio=$("#tidio-chat iframe");
+                        if(tidio.css("display")=="block"&& $(window).width()>977 ){
+                            document.getElementById("tidio-chat-iframe").style.bottom= ($("div#backTop.top-scroll").css("display")=="none" &&$(window).width()>977)>0? "-40px" : ($("div.toc-title").length&&$(window).width()>977)>0?"80px":"20px";   
+                            document.getElementById("tidio-chat-iframe").style.right="-15px";   
+                            document.getElementById("tidio-chat-iframe").style.height=parseInt(tidio.css("height"))>=520?"520px":tidio.css("height");
+                            document.getElementById("tidio-chat-iframe").style.zIndex="997";
+                        } 
+                        else if(tidio.css("display")=="block"&&$(window).width()>601 &&$(window).width()<992 ){
+                            document.getElementById("tidio-chat-iframe").style.bottom= ($("div#backTop.top-scroll").css("display")=="none" && 601< $(window).width()<992)>0? "-40px":"20px" ;   
+                            document.getElementById("tidio-chat-iframe").style.right="-15px"; 
+                            document.getElementById("tidio-chat-iframe").style.zIndex="997";
+                        }
+                        else if(tidio.css("display")=="block"&&$(window).width()<601 && parseInt(tidio.css("height"))<230){
+                            document.getElementById("tidio-chat-iframe").style.bottom= ($("div#backTop.top-scroll").css("display")=="none" && $(window).width()<601)>0? "-10px":"45px" ;   
+                            document.getElementById("tidio-chat-iframe").style.zIndex="997";
+                        }
+
+                        if( tidio.css("display")=="block"&&$(window).width()<601 && parseInt(tidio.css("height"))>=230){
+                            document.getElementById("tidio-chat-iframe").style.zIndex="998";
+                        }
+                    }
+                }); 
+            </script>
+        
+
+        <!-- 背景 canvas-nest -->
+        
+
+        <!-- 背景静止彩带 -->
+        
+            <script type="text/javascript">
+            var windowWidth = $(window).width();
+            if (windowWidth > 992) {
+                document.write('<script type="text/javascript" size="350" alpha="0.6" zIndex="-1" src="../../../../libs/background/ribbon.min.js"><\/script>');
+            }
+            </script>
+        
+
+        <!-- 背景动态彩带 -->
+        
+            <script type="text/javascript">
+            var windowWidth = $(window).width();
+            if (windowWidth > 992) {
+                document.write('<script type="text/javascript" src="../../../../libs/background/ribbon-dynamic.js"><\/script>');
+            }
+            </script>
+        
+
+    <script src="../../../../live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginModelPath":"assets/","model":{"jsonPath":"/live2dw/assets/z16.model.json"},"display":{"position":"left","width":280,"height":530},"mobile":{"show":false},"log":false,"pluginJsPath":"lib/","pluginRootPath":"live2dw/","tagMode":false});</script><script>!function(e){var r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function t(){for(var c=0;c<r.length;c++)t=r[c],void 0,0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=r[c];t=o,n=function(){r=r.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}t(),e.addEventListener("scroll",function(){!function(t,n){clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)}(t,e)})}(this);</script></body>
+</html>

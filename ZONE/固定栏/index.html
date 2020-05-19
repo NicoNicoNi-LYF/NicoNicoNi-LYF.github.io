@@ -1,40 +1,45 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"><head>
-<meta content="en-us" http-equiv="Content-Language" />
-<meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
- <link rel="icon" type="image/png" href="test_files/github.png" />
-<title>首页</title>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta content="en-us" http-equiv="Content-Language" />
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="test_files/github.png" />
+    <title>首页</title>
 
 
-<style>
-/*下方这句不动它，翻译开始*/
+    <style>
+        /*下方这句不动它，翻译开始*/
 
-* {
-	padding: 0;
-	margin: 0;
-}
+        * {
+            padding: 0;
+            margin: 0;
+        }
 
-/*翻译
+        /*翻译
 主页整体样式 
 文本对齐︰ 中心;
 背景色︰ #ffffff  使用夜间默认时修改为#000000即可
 }
 */
 
-html,body {
-	text-align: center;
-}html{
-background-image:url('wap/bg.jpg');
-background-repeat:no-repeat;
-background-size: 100% 100%;
+        html,
+        body {
+            text-align: center;
+        }
 
-width: 100%;
-height: 100%;
-/*background-size: 122%;*/
-}
+        html {
+            background-image: url('wap/bg.jpg');
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
 
-/*翻译
+            width: 100%;
+            height: 100%;
+            /*background-size: 122%;*/
+        }
+
+        /*翻译
 logo图标样式 
 宽度︰ 198px;
 高度︰ 65px;
@@ -44,17 +49,17 @@ logo图标样式
 }*/
 
 
-img.smaller {
-	width: 360px;
-	height: 110px;
-	max-width: 360px;
-	animation: flipInX 4s;
-	-webkit-animation: flipInX 4s
-}
+        img.smaller {
+            width: 360px;
+            height: 110px;
+            max-width: 360px;
+            animation: flipInX 4s;
+            -webkit-animation: flipInX 4s
+        }
 
 
 
-/*翻译
+        /*翻译
 logo添加文字样式 
 字体大小︰ 2em;
 白色空间︰ 正常;
@@ -63,15 +68,15 @@ logo添加文字样式
 颜色: #232323
 }*/
 
-.logo {
-	font-size: 2em;
-	white-space: normal;
-	word-wrap: break-word;
-	text-decoration: none;
-	color: #232323
-}
+        .logo {
+            font-size: 2em;
+            white-space: normal;
+            word-wrap: break-word;
+            text-decoration: none;
+            color: #232323
+        }
 
-/*翻译
+        /*翻译
 搜索栏字体样式 
 宽度︰ 90%;
 高度︰ 40px;
@@ -84,30 +89,30 @@ logo添加文字样式
 边界半径︰ 50px
 }*/
 
-#search_input {
-	width: 90%;
-	height: 40px;
-	background-color: transparent;
-	border: none;
-	outline: 0;
-	font-size: 18px;
-	color: #426ab3;
-	padding: 0 20px;
-	border-radius: 50px
-}
+        #search_input {
+            width: 90%;
+            height: 40px;
+            background-color: transparent;
+            border: none;
+            outline: 0;
+            font-size: 18px;
+            color: #426ab3;
+            padding: 0 20px;
+            border-radius: 50px
+        }
 
-/*翻译
+        /*翻译
 搜索框边距 
 下边距︰ 30px;
 上边距︰ 20px;
 */
 
-.search_part {
-	margin-bottom: 30px;
-	margin-top: 20px;
-}
+        .search_part {
+            margin-bottom: 30px;
+            margin-top: 20px;
+        }
 
-/*翻译
+        /*翻译
 跨度样式
 显示︰ 阻止;
 溢出︰ 隐藏;
@@ -115,14 +120,14 @@ logo添加文字样式
 垂直对齐︰ 居中;
 */
 
-span {
-	display: block;
-	overflow: hidden;
-	padding-left: 5px;
-	vertical-align: middle;
-}
+        span {
+            display: block;
+            overflow: hidden;
+            padding-left: 5px;
+            vertical-align: middle;
+        }
 
-/*翻译
+        /*翻译
 搜索栏框架样式 {
 框阴影︰ 0 0 18px rgba(70,70,40,.255);括号里的颜色为Rgb默认，可进入http://rgb.phpddt.com/查询
 -webkit 动画︰ fadeIn 2.5;
@@ -138,21 +143,21 @@ span {
 }
 */
 
-.search_bar {
-	box-shadow: 0 0 18px rgba(70,70,40,.255);
-	-webkit-animation: fadeIn 2.5s;
-	animation: fadeIn 2.5s;
-	background-color: rgba(255,255,255,.100);
-	border-radius: 50px;
-	display: table;
-	vertical-align: middle;
-	width: 80%;
-	height: 40px;
-	max-width: 400px;
-	margin: 10px auto;
-}
+        .search_bar {
+            box-shadow: 0 0 18px rgba(70, 70, 40, .255);
+            -webkit-animation: fadeIn 2.5s;
+            animation: fadeIn 2.5s;
+            background-color: rgba(255, 255, 255, .100);
+            border-radius: 50px;
+            display: table;
+            vertical-align: middle;
+            width: 80%;
+            height: 40px;
+            max-width: 400px;
+            margin: 10px auto;
+        }
 
-/*翻译
+        /*翻译
 搜索栏搜索目标确认图标样式，目前为米奇
 轮廓边框︰ 0;
 高度︰ 40px;
@@ -165,19 +170,19 @@ span {
 填充︰ 0 13px 0 13px
 */
 
-#search_submit {
-	outline: 0;
-	height: 40px;
-	float: right;
-	color: #000;
-	font-size: 16px;
-	font-weight: 700;
-	border: none;
-	background-color: transparent;
-	padding: 0 13px 0 13px
-}
+        #search_submit {
+            outline: 0;
+            height: 40px;
+            float: right;
+            color: #000;
+            font-size: 16px;
+            font-weight: 700;
+            border: none;
+            background-color: transparent;
+            padding: 0 13px 0 13px
+        }
 
-/*翻译
+        /*翻译
 书签图标排版目录样式 
 宽度︰ 100%;
 文本对齐︰ 中心;
@@ -185,14 +190,14 @@ span {
 填充底部︰ 15px;
 */
 
-#content {
-	width: 100%;
-	text-align: center;
-	padding-top: 15px;
-	padding-bottom: 15px;
-}
+        #content {
+            width: 100%;
+            text-align: center;
+            padding-top: 15px;
+            padding-bottom: 15px;
+        }
 
-/*翻译
+        /*翻译
 书签框架样式
 -webkit 动画︰ fadeInDown 1s;
 动画︰ fadeInDown 1s;
@@ -202,17 +207,17 @@ span {
 边境︰ 0;
 */
 
-.box {
-	-webkit-animation: fadeInDown 1s;
-	animation: fadeInDown 1s;
-	position: relative;
-	display: inline-block;
-	width: 75px;
-	border: 0;
-}
+        .box {
+            -webkit-animation: fadeInDown 1s;
+            animation: fadeInDown 1s;
+            position: relative;
+            display: inline-block;
+            width: 75px;
+            border: 0;
+        }
 
 
-/*翻译
+        /*翻译
 书签图标样式
 宽度︰ 100%;
 高度︰ 100%;
@@ -221,15 +226,15 @@ span {
 顶︰ 0;
 */
 
-.box a {
-	width: 100%;
-	height: 100%;
-	position: absolute;
-	left: 0;
-	top: 0;
-}
+        .box a {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
 
-/*翻译
+        /*翻译
 书签字体样式
 颜色: #232323;使用夜间模式时修改为#eee或者#f2eada即可
 高度︰ 1.5em;
@@ -248,411 +253,604 @@ span {
 填充底部︰ 8px;
 */
 
-.url {
-	color: #232323;
-	height: 1.5em;
-	line-height: 1.5em;
-	width: 72px;
-	font-size: 0.75em;
-	white-space: nowrap;
-	overflow: hidden;
-	margin: auto;
-	-webkit-border-top-right-radius: 5px;
-	-webkit-border-bottom-right-radius: 5px;
-	text-overflow: ellipsis;
-	-o-text-overflow: ellipsis;
-	-ms-text-overflow: ellipsis;
-	padding-top: 3px;
-	padding-bottom: 8px;
-}
+        .url {
+            color: #232323;
+            height: 1.5em;
+            line-height: 1.5em;
+            width: 72px;
+            font-size: 0.75em;
+            white-space: nowrap;
+            overflow: hidden;
+            margin: auto;
+            -webkit-border-top-right-radius: 5px;
+            -webkit-border-bottom-right-radius: 5px;
+            text-overflow: ellipsis;
+            -o-text-overflow: ellipsis;
+            -ms-text-overflow: ellipsis;
+            padding-top: 3px;
+            padding-bottom: 8px;
+        }
 
-/*翻译
+        /*翻译
 字体样式 
 宽度︰ 3em;
 高度︰ 3em;
 最大宽度︰ 72px;
 */
 
-.icon {
-	width: 3em;
-	height: 3em;
-	max-width: 72px;
-}
+        .icon {
+            width: 3em;
+            height: 3em;
+            max-width: 72px;
+        }
 
-/*
+        /*
 下方为动画样式，不懂的不要修改
 */
 
-@-webkit-keyframes flipInX {
-	0% {
-		-webkit-transform: perspective(400px) rotateX(90deg);
-		transform: perspective(400px) rotateX(90deg);
-		opacity: 0
-	}
+        @-webkit-keyframes flipInX {
+            0% {
+                -webkit-transform: perspective(400px) rotateX(90deg);
+                transform: perspective(400px) rotateX(90deg);
+                opacity: 0
+            }
 
-	40% {
-		-webkit-transform: perspective(400px) rotateX(-10deg);
-		transform: perspective(400px) rotateX(-10deg)
-	}
+            40% {
+                -webkit-transform: perspective(400px) rotateX(-10deg);
+                transform: perspective(400px) rotateX(-10deg)
+            }
 
-	70% {
-		-webkit-transform: perspective(400px) rotateX(10deg);
-		transform: perspective(400px) rotateX(10deg)
-	}
+            70% {
+                -webkit-transform: perspective(400px) rotateX(10deg);
+                transform: perspective(400px) rotateX(10deg)
+            }
 
-	100% {
-		-webkit-transform: perspective(400px) rotateX(0);
-		transform: perspective(400px) rotateX(0);
-		opacity: 1
-	}
-}
+            100% {
+                -webkit-transform: perspective(400px) rotateX(0);
+                transform: perspective(400px) rotateX(0);
+                opacity: 1
+            }
+        }
 
-@keyframes flipInX {
-	0% {
-		-webkit-transform: perspective(400px) rotateX(90deg);
-		-ms-transform: perspective(400px) rotateX(90deg);
-		transform: perspective(400px) rotateX(90deg);
-		opacity: 0
-	}
+        @keyframes flipInX {
+            0% {
+                -webkit-transform: perspective(400px) rotateX(90deg);
+                -ms-transform: perspective(400px) rotateX(90deg);
+                transform: perspective(400px) rotateX(90deg);
+                opacity: 0
+            }
 
-	40% {
-		-webkit-transform: perspective(400px) rotateX(-10deg);
-		-ms-transform: perspective(400px) rotateX(-10deg);
-		transform: perspective(400px) rotateX(-10deg)
-	}
+            40% {
+                -webkit-transform: perspective(400px) rotateX(-10deg);
+                -ms-transform: perspective(400px) rotateX(-10deg);
+                transform: perspective(400px) rotateX(-10deg)
+            }
 
-	70% {
-		-webkit-transform: perspective(400px) rotateX(10deg);
-		-ms-transform: perspective(400px) rotateX(10deg);
-		transform: perspective(400px) rotateX(10deg)
-	}
+            70% {
+                -webkit-transform: perspective(400px) rotateX(10deg);
+                -ms-transform: perspective(400px) rotateX(10deg);
+                transform: perspective(400px) rotateX(10deg)
+            }
 
-	100% {
-		-webkit-transform: perspective(400px) rotateX(0);
-		-ms-transform: perspective(400px) rotateX(0);
-		transform: perspective(400px) rotateX(0);
-		opacity: 1
-	}
-}
+            100% {
+                -webkit-transform: perspective(400px) rotateX(0);
+                -ms-transform: perspective(400px) rotateX(0);
+                transform: perspective(400px) rotateX(0);
+                opacity: 1
+            }
+        }
 
-@-webkit-keyframes fadeIn {
-	0% {
-		opacity: 0
-	}
+        @-webkit-keyframes fadeIn {
+            0% {
+                opacity: 0
+            }
 
-	100% {
-		opacity: 1
-	}
-}
+            100% {
+                opacity: 1
+            }
+        }
 
-@keyframes fadeIn {
-	0% {
-		opacity: 0
-	}
+        @keyframes fadeIn {
+            0% {
+                opacity: 0
+            }
 
-	100% {
-		opacity: 1
-	}
-}
+            100% {
+                opacity: 1
+            }
+        }
 
-@-webkit-keyframes fadeInDown {
-	0% {
-		opacity: 0;
-		-webkit-transform: translateY(-20px);
-		transform: translateY(-20px)
-	}
+        @-webkit-keyframes fadeInDown {
+            0% {
+                opacity: 0;
+                -webkit-transform: translateY(-20px);
+                transform: translateY(-20px)
+            }
 
-	100% {
-		opacity: 1;
-		-webkit-transform: translateY(0);
-		transform: translateY(0)
-	}
-}
+            100% {
+                opacity: 1;
+                -webkit-transform: translateY(0);
+                transform: translateY(0)
+            }
+        }
 
-@keyframes fadeInDown {
-	0% {
-		opacity: 0;
-		-webkit-transform: translateY(-20px);
-		-ms-transform: translateY(-20px);
-		transform: translateY(-20px)
-	}
+        @keyframes fadeInDown {
+            0% {
+                opacity: 0;
+                -webkit-transform: translateY(-20px);
+                -ms-transform: translateY(-20px);
+                transform: translateY(-20px)
+            }
 
-	100% {
-		opacity: 1;
-		-webkit-transform: translateY(0);
-		-ms-transform: translateY(0);
-		transform: translateY(0)
-	}
-}
-
-</style></head>
+            100% {
+                opacity: 1;
+                -webkit-transform: translateY(0);
+                -ms-transform: translateY(0);
+                transform: translateY(0)
+            }
+        }
+    </style>
+</head>
 
 
 <body>
 
-<div id="content">
+    <div id="content">
 
-<br>
-<div class="search_part">
-<a class="logo" onclick="displayDate()" href="https://www.google.com.hk/" target="_blank"> <!--点击logo跳转-->
-<img class="smaller" src="test_files/21e.gif">
-</a>
-<br>
-<form onsubmit="return search()" class="search_bar">
-<input id="search_submit" value="搜索" type="submit">
-<span><input class="search" autocomplete="off" id="search_input" placeholder="✎...搜点什么好呢？" type="text"></span>
-<ul id="suglist"></ul>
-</form>
-</div>
-<br>
-
-<div class="box">
-<a href="https://niconiconi-lyf.github.io" ></a>
-<p><img class="icon" src="test_files/logo.svg"></p>
-<p class="url">博客</p>
-</div>
-    <!--博客就不用开新页面跳转了-->
-
-<div class="box">
-<a href="https://github.com/" target="_blank"></a>
-<p><img class="icon" src="test_files/github.png"></p>
-<p class="url">github</p>
-</div>
-
-<div class="box">
-<a href="https://translate.google.com/?hl=zh-CN&amp;tab=wT" target="_blank"></a>
-<p><img class="icon" src="test_files/1.png"></p>
-<p class="url">谷歌翻译</p>
-</div>
+        <br>
+        <div class="search_part">
+            <a class="logo" onclick="displayDate()" href="https://www.google.com.hk/" target="_blank">
+                <!--点击logo跳转-->
+                <img class="smaller" src="test_files/21e.gif">
+            </a>
+            <br>
+            <form onsubmit="return search()" class="search_bar">
+                <input id="search_submit" value="搜索" type="submit">
+                <span><input class="search" autocomplete="off" id="search_input" placeholder="✎...搜点什么好呢？" type="text"></span>
+                <ul id="suglist"></ul>
+            </form>
+        </div>
+        <br>
 
 
-<div class="box">
-<a href="https://www.bilibili.com/anime/?spm_id_from=333.999.b_696e7465726e6174696f6e616c486561646572.2" target="_blank"></a>
-<p><img class="icon" src="test_files/a_002.png"></p>
-<p class="url">哔哩哔哩</p>
-</div>
+        <div class="box">
+            <a href="https://niconiconi-lyf.github.io"></a>
+            <p><img class="icon" src="test_files/logo.svg"></p>
+            <p class="url">博客</p>
+        </div>
+        <!--博客就不用开新页面跳转了-->
+
+        <div class="box">
+            <a href="https://github.com/" target="_blank"></a>
+            <p><img class="icon" src="test_files/github.png"></p>
+            <p class="url">github</p>
+        </div>
+
+        <div class="box">
+            <a href="https://magi.com/" target="_blank"></a>
+            <p><img class="icon" src="test_files/magi.png"></p>
+            <p class="url">Magi</p>
+        </div>
+
+        <div class="box">
+            <a href="https://translate.google.com/?hl=zh-CN&amp;tab=wT" target="_blank"></a>
+            <p><img class="icon" src="test_files/1.png"></p>
+            <p class="url">谷歌翻译</p>
+        </div>
 
 
-<div class="box">
-<a href="https://www.youtube.com/?hl=zh-cn" target="_blank"></a>
-<p><img class="icon" src="test_files/youtube2.png"></p>
-<p class="url">YouTube</p>
-</div>
-
-<div class="box">
-<a href="https://www.facebook.com/" target="_blank"></a>
-<p><img class="icon" src="test_files/2.png"></p>
-<p class="url">facebook</p>
-</div>
-
-<div class="box">
-<a href="https://www.zhihu.com/" target="_blank"></a>
-<p><img class="icon" src="test_files/a.png"></p>
-<p class="url">知乎</p>
-</div>   
-
-<div class="box">
-<a href="https://www.quora.com/" target="_blank"></a>
-<p><img class="icon" src="test_files/quora.png"></p>
-<p class="url">Quora</p>
-</div>
-
- 
-
-    <!--自己加的-->
-<hr />
-    <div class="Style">
-
-    <!--工具箱-->
-<div class="box" >
-<a href="https://lolicon.app" target="_blank"></a>
-<p class="url" >工具箱</p>
-</div>   
-
-<div class="box" >
-<a href="https://tools.miku.ac"  target="_blank"></a>
-<p class="url" >MikuTools</p>
-</div> 
-
- 
-	<br />
-
-<div class="box" >
-<a href="https://xclient.info" target="_blank"></a>
-<p class="url" >Xclient</p>
-</div>   
-
-<div class="box" >
-<a href="https://trends.google.com/trends/explore?q=%2Fm%2F07sbkfb,%2Fm%2F01t6b,%2Fm%2F0_lcrx4,%2Fm%2F01t6b" target="_blank"  ></a>
-<p class="url" >谷歌趋势</p>
-</div> 
-
-<div class="box" >
-<a href="https://stackoverflow.com/"  target="_blank"></a>
-<p class="url" >栈溢出</p>
-</div> 
-
-<div class="box" >
-<a href="https://jotang.party/" target="_blank" ></a>
-<p class="url" >焦糖工作室</p>
-</div>
-
-<div class="box" >
-<a href="https://bdc.youzack.com/Account/Home/LoginViaPhoneNum?returnUrl=%2FRecitation%2FHome"  ></a>
-<p class="url" >背单词</p>
-</div> 
+        <div class="box">
+            <a href="https://www.bilibili.com/anime/?spm_id_from=333.999.b_696e7465726e6174696f6e616c486561646572.2" target="_blank"></a>
+            <p><img class="icon" src="test_files/a_002.png"></p>
+            <p class="url">哔哩哔哩</p>
+        </div>
 
 
 
-<div class="box" >
-<a href="http://so.ncckl.cn/" target="_blank"  ></a>
-<p class="url" >找视频</p>
-</div> 
+        <div class="box">
+            <a href="https://www.youtube.com/?hl=zh-cn" target="_blank"></a>
+            <p><img class="icon" src="test_files/youtube2.png"></p>
+            <p class="url">YouTube</p>
+        </div>
 
-<div class="box" >
-<a href="http://ifkdy.com" target="_blank"  ></a>
-<p class="url" >疯狂影视搜索</p>
-</div> 
+        <div class="box">
+            <a href="https://www.facebook.com/" target="_blank"></a>
+            <p><img class="icon" src="test_files/2.png"></p>
+            <p class="url">facebook</p>
+        </div>
 
+        <div class="box">
+            <a href="https://www.zhihu.com/" target="_blank"></a>
+            <p><img class="icon" src="test_files/a.png"></p>
+            <p class="url">知乎</p>
+        </div>
 
-
-<div class="box" >
-<a href="https://www.jiumodiary.com/" target="_blank"  ></a>
-<p class="url" >鸠摩搜书</p>
-</div>   
-
-
-<div class="box" >
-<a href="http://webresizer.com/resizer/" target="_blank"  ></a>
-<p class="url" >图片压缩</p>
-</div> 
-
-
-<div class="box" >
-<a href="https://pintia.cn/problem-sets" target="_blank"  ></a>
-<p class="url" >浙院PTA</p>
-</div> 
+        <div class="box">
+            <a href="https://www.quora.com/" target="_blank"></a>
+            <p><img class="icon" src="test_files/quora.png"></p>
+            <p class="url">Quora</p>
+        </div>
 
 
-<div class="box" >
-<a href="http://www.ruanyifeng.com/blog/2015/12/git-workflow.html" target="_blank"  ></a>
-<p class="url" >Git工作流程</p>
-</div>  
-
-<div class="box" >
-<a href="https://www.becmd.com" target="_blank"  ></a>
-<p class="url" >在线接收短信</p>
-</div>  
+        <div class="box">
+            <a href="https://niconiconi-lyf.github.io" ></a>
+            <p><img class="icon" src="test_files/pixel.gif"></p>
+            <p class="url"></p>
+        </div>
+        <!--隐藏图标-->
 
 
-    <br />
+        <hr />
 
-<div class="box" >
-<a href="https://visualstudio.microsoft.com/zh-hans/vs/getting-started/" target="_blank"  ></a>
-<p class="url" >VS教程</p>
-</div>
+        <!--自己加的-->
 
-<div class="box" >
-<p class="STYLE2"><a href="https://space.bilibili.com/7711573/#/" target="_blank"  ></a>
-<p class="url" >b站算法</p>
-</div>
-
-<div class="box" >
-<a href="https://leetcode-cn.com/problemset/all/" target="_blank"  ></a>
-<p class="url" >LeetCode</p>
-</div>
-
-<div class="box" >
-<a href="http://www.anonymouschina.org/?cat=282/" target="_blank"  ></a>
-<p class="url" >HackerTool</p>
-</div> 
-
-<div class="box" >
-<a href="http://monyer.com/game/game1/" target="_blank"  ></a>
-<p class="url" >梦之光芒</p>
-</div>
+        <div class="Style">
 
 
-<div class="box" >
-<a href="https://www.urlteam.org/2018/07/%E5%85%B3%E4%BA%8E%E5%8F%8D%E7%88%AC%E8%99%AB%E6%88%91%E8%A7%81%E5%88%B0%E7%9A%84%E5%90%84%E7%A7%8D%E5%89%8D%E5%90%8E%E7%AB%AF%E5%A5%87%E8%91%A9%E5%A7%BF%E5%8A%BF/" target="_blank"  ></a>
-<p class="url" >反爬虫</p>
-</div> 
+            <!--工具箱  原<div align="left" class="box">工具类</div> -->
+            <div align="center">Tools</div>
 
-<div class="box" >
-<a href="https://www.52pojie.cn/" target="_blank"  ></a>
-<p class="url" >吾爱破解</p>
-</div>
+            <div class="box">
+                <a href="https://lolicon.app" target="_blank"></a>
+                <p class="url">工具箱</p>
+            </div>
 
-<div class="box" >
-<a href="https://www.nocmd.com" target="_blank"  ></a>
-<p class="url" >NoCmd</p>
-</div>
+            <div class="box">
+                <a href="https://tools.miku.ac" target="_blank"></a>
+                <p class="url">MikuTools</p>
+            </div>
 
-<div class="box" >
-<a href="https://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000/001431611988455689d4c116b2c4ed6aec000776c00ed52000" target="_blank"  ></a>
-<p class="url" >PY教程</p>
-</div> 
-  
-<div class="box" >
-<a href="https://github.com/huber-yaoer/resume/blob/master/机器学习总结V0.2.pdf"  target="_blank" ></a>
-<p class="url" >AI思维导图</p>
-</div> 
+            <div class="box">
+                <a href="https://www.toolfk.com" target="_blank"></a>
+                <p class="url">ToolFk</p>
+            </div>
 
-<div class="box" >
-<a href="https://github.com/flymysql/Graph_dijkstra/blob/master/README.md" target="_blank"  ></a>
-<p class="url" >Dijkstra算法</p>
-</div> 
+            <div class="box">
+                <a href="https://trends.google.com/trends/explore?q=%2Fm%2F07sbkfb,%2Fm%2F01t6b,%2Fm%2F0_lcrx4,%2Fm%2F01t6b" target="_blank"></a>
+                <p class="url">谷歌趋势</p>
+            </div>
+
+            <div class="box">
+                <a href="https://bdc.youzack.com/Account/Home/LoginViaPhoneNum?returnUrl=%2FRecitation%2FHome"></a>
+                <p class="url">背单词</p>
+            </div>
 
 
-<div class="box" >
-<a href="http://www.anquan.us/search?keywords=&&content_search_by=by_bugs&&search_by_html=False&&page=1" target="_blank"  ></a>
-<p class="url" >乌云</p>
-</div> 
+            <div class="box">
+                <a href="http://webresizer.com/resizer/" target="_blank"></a>
+                <p class="url">图片压缩</p>
+            </div>
 
-	<br/>
+            <div class="box">
+                <a href="https://www.becmd.com" target="_blank"></a>
+                <p class="url">在线接收短信</p>
+            </div>
 
-<div class="box" >
-<a href="https://suulnnka.github.io/BullshitGenerator/index.html"  target="_blank" ></a>
-<p class="url" >文章生成器</p>
-</div> 
+            <div class="box">
+                <a href="http://www.anonymouschina.org/?cat=282/" target="_blank"></a>
+                <p class="url">HackerTool</p>
+            </div>
 
-<div class="box" >
-<a href="https://bww.lolicon.app"  target="_blank"></a>
-<p class="url" >生草图制作器</p>
-</div> 
+            <div class="box">
+                <a href="https://suulnnka.github.io/BullshitGenerator/index.html" target="_blank"></a>
+                <p class="url">文章生成器</p>
+            </div>
 
-<div class="box" >
-<a href="http://98goka.com/archive/info/1"  target="_blank" ></a>
-<p class="url" >百度网盘会员</p>
-</div> 
+            <div class="box">
+                <a href="https://bww.lolicon.app" target="_blank"></a>
+                <p class="url">生草图制作器</p>
+            </div>
 
-<div class="box" >
-<a href="https://www.soogif.com"  target="_blank" ></a>
-<p class="url" >SooGif</p>
-</div> 
 
-<div class="box" >
-<a href="https://brew.sh/index_zh-cn"  target="_blank" ></a>
-<p class="url" >homebrew</p>
-</div> 
+            <div class="box">
+                <a href="https://www.ratatype.com/" target="_blank"></a>
+                <p class="url">手速磨炼室</p>
+            </div>
 
-<div class="box" >
-<a href="https://www.ratatype.com/" target="_blank" ></a>
-<p class="url" >手速磨炼室</p>
-</div>
+            <div class="box">
+                <a href="https://www.keybr.com" target="_blank"></a>
+                <p class="url">手速专精</p>
+            </div>
 
-<div class="box" >
-<a href="https://www.keybr.com"  target="_blank" ></a>
-<p class="url" >手速专精</p>
-</div> 
+            <br />
 
 
 
-    <br />
+            <div class="box">
+                <a href="https://xiezuocat.com/#/" target="_blank"></a>
+                <p class="url">论文降重</p>
+            </div>
 
-</div>
+            <div class="box">
+                <a href="https://marswang42.github.io/hanmai-master/" target="_blank"></a>
+                <p class="url">喊麦生成器</p>
+            </div>
 
-<!--
+            <hr />
+
+            <!-- ----------------------------------------------------------------------  -->
+
+            <div align="center">Sources</div>
+
+            <div class="box">
+                <a href="https://xclient.info" target="_blank"></a>
+                <p class="url">Xclient</p>
+            </div>
+
+            <div class="box">
+                <a href="http://so.ncckl.cn/" target="_blank"></a>
+                <p class="url">找视频</p>
+            </div>
+
+            <div class="box">
+                <a href="http://ifkdy.com" target="_blank"></a>
+                <p class="url">疯狂影视搜索</p>
+            </div>
+
+
+            <div class="box">
+                <a href="https://www.jiumodiary.com/" target="_blank"></a>
+                <p class="url">鸠摩搜书</p>
+            </div>
+
+            <div class="box">
+                <a href="https://www.52pojie.cn/" target="_blank"></a>
+                <p class="url">吾爱破解</p>
+            </div>
+
+            <div class="box">
+                <a href="https://www.nocmd.com" target="_blank"></a>
+                <p class="url">NoCmd</p>
+            </div>
+
+            <div class="box">
+                <a href="https://www.soogif.com" target="_blank"></a>
+                <p class="url">SooGif</p>
+            </div>
+
+            <div class="box">
+                <a href="http://98goka.com/archive/info/1" target="_blank"></a>
+                <p class="url">百度网盘会员</p>
+            </div>
+
+            <hr />
+
+            <!-- ----------------------------------------------------------------------  -->
+
+            <div align="center">Learning</div>
+
+
+            <div class="box">
+                <a href="https://pintia.cn/problem-sets" target="_blank"></a>
+                <p class="url">浙院PTA</p>
+            </div>
+
+
+            <div class="box">
+                <a href="http://www.ruanyifeng.com/blog/2015/12/git-workflow.html" target="_blank"></a>
+                <p class="url">Git工作流程</p>
+            </div>
+
+
+            <div class="box">
+                <a href="https://visualstudio.microsoft.com/zh-hans/vs/getting-started/" target="_blank"></a>
+                <p class="url">VS教程</p>
+            </div>
+
+            <div class="box">
+                <p class="STYLE2"><a href="https://space.bilibili.com/7711573/#/" target="_blank"></a>
+                <p class="url">b站算法</p>
+            </div>
+
+            <div class="box">
+                <a href="https://leetcode-cn.com/problemset/all/" target="_blank"></a>
+                <p class="url">LeetCode</p>
+            </div>
+
+
+            <div class="box">
+                <a href="http://monyer.com/game/game1/" target="_blank"></a>
+                <p class="url">梦之光芒</p>
+            </div>
+
+
+            <div class="box">
+                <a href="https://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000/001431611988455689d4c116b2c4ed6aec000776c00ed52000" target="_blank"></a>
+                <p class="url">PY教程</p>
+            </div>
+
+            <div class="box">
+                <a href="https://github.com/huber-yaoer/resume/blob/master/机器学习总结V0.2.pdf" target="_blank"></a>
+                <p class="url">AI思维导图</p>
+            </div>
+
+            <div class="box">
+                <a href="https://brew.sh/index_zh-cn" target="_blank"></a>
+                <p class="url">homebrew</p>
+            </div>
+
+
+            <hr />
+
+            <!-- ----------------------------------------------------------------------  -->
+
+            <div align="center">Projects</div>
+
+
+            <div class="box">
+                <a href="https://github.com/julycoding/The-Art-Of-Programming-By-July" target="_blank"></a>
+                <p class="url">编程之法</p>
+            </div>
+
+            <div class="box">
+                <a href="https://github.com/ruanyf/jstraining" target="_blank"></a>
+                <p class="url">全栈培训</p>
+            </div>
+
+            <div class="box">
+                <a href="https://github.com/peng-zhihui/X-Bot" target="_blank"></a>
+                <p class="url">X-Bot</p>
+            </div>
+
+            <div class="box">
+                <a href="https://github.com/peng-zhihui/BilibiliLottery" target="_blank"></a>
+                <p class="url">抽奖算法</p>
+            </div>
+
+
+
+            <div class="box">
+                <a href="https://github.com/Dev-XYS/Algorithms" target="_blank"></a>
+                <p class="url">算法仓库</p>
+            </div>
+
+            <div class="box">
+                <a href="https://github.com/hongcyu/char_painting" target="_blank"></a>
+                <p class="url">字符画</p>
+            </div>
+
+            <div class="box">
+                <a href="https://github.com/h2y/Shadowrocket-ADBlock-Rules" target="_blank"></a>
+                <p class="url">ssr规则</p>
+            </div>
+
+
+            <div class="box">
+                <a href="https://github.com/flymysql/Graph_dijkstra/blob/master/README.md" target="_blank"></a>
+                <p class="url">Dijkstra算法</p>
+            </div>
+
+            <hr />
+
+            <div class="box">
+                <a href="https://github.com/fengdu78/Coursera-ML-AndrewNg-Notes" target="_blank"></a>
+                <p class="url">吴恩达</p>
+            </div>
+
+            <div class="box">
+                <a href="https://github.com/YUbuntu0109/YUbuntu0109.github.io/blob/HexoBackup/README.md" target="_blank"></a>
+                <p class="url">编程学习笔记</p>
+            </div>
+
+
+            <div class="box">
+                <a href="https://github.com/Dimsmary/Ossas_ChatBot" target="_blank"></a>
+                <p class="url">ChatBot</p>
+            </div>
+
+
+            <div class="box">
+                <a href="" target="_blank"></a>
+                <p class="url">识别表情包</p>
+            </div>
+
+            <!-- ----------------------------------------------------------------------  -->
+
+
+            <div align="center">Blog</div>
+
+
+            <div class="box">
+                <a href="https://moe.best" target="_blank"></a>
+                <p class="url">神代綺凜</p>
+            </div>
+
+            <div class="box">
+                <a href="https://qianling.pw" target="_blank"></a>
+                <p class="url">千灵</p>
+            </div>
+
+
+            <div class="box">
+                <a href="https://ac258.gitee.io" target="_blank"></a>
+                <p class="url">星屿</p>
+            </div>
+
+
+            <div class="box">
+                <a href="https://ldgyyf.cn" target="_blank"></a>
+                <p class="url">ldg</p>
+            </div>
+
+
+            <div class="box">
+                <a href="https://senqi666.gitee.io" target="_blank"></a>
+                <p class="url">森七</p>
+            </div>
+
+            <div class="box">
+                <a href="https://ishacker.net" target="_blank"></a>
+                <p class="url">小灰灰</p>
+            </div>
+
+            <div class="box">
+                <a href="https://eyhn.in" target="_blank"></a>
+                <p class="url">eyhn</p>
+            </div>
+
+            <div class="box">
+                <a href="https://topking66.gitee.io" target="_blank"></a>
+                <p class="url">topking</p>
+            </div>
+
+            <div class="box">
+                <a href="https://www.zhihu.com/org/liang-zi-wei-48/answers" target="_blank"></a>
+                <p class="url">量子位</p>
+            </div>
+
+
+
+            <br />
+
+            <div class="box">
+                <a href="https://stackoverflow.com/" target="_blank"></a>
+                <p class="url">栈溢出</p>
+            </div>
+
+            <div class="box">
+                <a href="https://jotang.party/" target="_blank"></a>
+                <p class="url">焦糖工作室</p>
+            </div>
+
+
+
+            <div class="box">
+                <a href="https://www.codesheep.cn" target="_blank"></a>
+                <p class="url">CodeSheep</p>
+            </div>
+
+            <div class="box">
+                <a href="http://linest.github.io" target="_blank"></a>
+                <p class="url">Linest</p>
+            </div>
+
+
+            <div class="box">
+                <a href="https://www.stkdaren.top" target="_blank"></a>
+                <p class="url">stkdaren</p>
+            </div>
+
+            <div class="box">
+                <a href="https://www.aomanhao.top" target="_blank"></a>
+                <p class="url">aomanha</p>
+            </div>
+
+
+            <div class="box">
+                <a href="http://www.guide2it.com" target="_blank"></a>
+                <p class="url">走进IT</p>
+            </div>
+
+
+            <div class="box">
+                <a href="http://dimsmary.tech" target="_blank"></a>
+                <p class="url">dismary</p>
+            </div>
+
+
+        </div>
+
+        <!--
 如若要添加可复制一段
 <div class="box">
 <a href="地址"></a>
@@ -666,31 +864,32 @@ span {
 
 -->
 
-</div>
+    </div>
 
-<script async="" src="test_files/analytics.js"></script><script type="text/javascript">
-var s=1;
-function displayDate(){
-	if(s===1) s=0;
-		else s=1;
-}
-function search(){
-  if(document.getElementById("search_input").value != "")
-  	{
-  		if(s===1)
-  		{
-  			window.location.href = "https://www.google.com.hk/search?newwindow=1&safe=strict&source=hp&ei=DvkPW_77ENDz5gK1waLoBg&q=" + document.getElementById("search_input").value;document.getElementById("search_input").value = "";
-  		}
-  		else 
-  		{
-  			window.location.href = "https://www.baidu.com/baidu?wd=" + document.getElementById("search_input").value;document.getElementById("search_input").value = "";
-  		}
-  		
-	}
-  return false;
-}
-</script>
-<!--
+    <script async="" src="test_files/analytics.js"></script>
+    <script type="text/javascript">
+        var s = 1;
+
+        function displayDate() {
+            if (s === 1) s = 0;
+            else s = 1;
+        }
+
+        function search() {
+            if (document.getElementById("search_input").value != "") {
+                if (s === 1) {
+                    window.location.href = "https://www.google.com.hk/search?newwindow=1&safe=strict&source=hp&ei=DvkPW_77ENDz5gK1waLoBg&q=" + document.getElementById("search_input").value;
+                    document.getElementById("search_input").value = "";
+                } else {
+                    window.location.href = "https://www.baidu.com/baidu?wd=" + document.getElementById("search_input").value;
+                    document.getElementById("search_input").value = "";
+                }
+
+            }
+            return false;
+        }
+    </script>
+    <!--
  <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -736,18 +935,92 @@ function search(){
 };
   </script>
 --->
-   <script src="test_files/cet4.js"></script>
-   <script src="test_files/activate-power-mode.js"></script><canvas width="1521" height="754" style="position: fixed; top: 0px; left: 0px; pointer-events: none; z-index: 999999;"></canvas>
+    <script src="test_files/cet4.js"></script>
+    <script src="test_files/activate-power-mode.js"></script><canvas width="1521" height="754" style="position: fixed; top: 0px; left: 0px; pointer-events: none; z-index: 999999;"></canvas>
     <script>
         POWERMODE.colorful = true; // 控制开启/开启礼花特效  
         POWERMODE.shake = false; // 控制开启/关闭屏幕震动特效  
-    document.body.addEventListener('input', POWERMODE);
+        document.body.addEventListener('input', POWERMODE);
     </script>
 
 
-<script type="text/javascript">
-	!function(){function n(n,e,t){return n.getAttribute(e)||t}function e(n){return document.getElementsByTagName(n)}function t(){var t=e("script"),o=t.length,i=t[o-1];return{l:o,z:n(i,"zIndex",-1),o:n(i,"opacity",.5),c:n(i,"color","0,0,0"),n:n(i,"count",99)}}function o(){a=m.width=window.innerWidth||document.documentElement.clientWidth||document.body.clientWidth,c=m.height=window.innerHeight||document.documentElement.clientHeight||document.body.clientHeight}function i(){r.clearRect(0,0,a,c);var n,e,t,o,m,l;s.forEach(function(i,x){for(i.x+=i.xa,i.y+=i.ya,i.xa*=i.x>a||i.x<0?-1:1,i.ya*=i.y>c||i.y<0?-1:1,r.fillRect(i.x-.5,i.y-.5,1,1),e=x+1;e<u.length;e++)n=u[e],null!==n.x&&null!==n.y&&(o=i.x-n.x,m=i.y-n.y,l=o*o+m*m,l<n.max&&(n===y&&l>=n.max/2&&(i.x-=.03*o,i.y-=.03*m),t=(n.max-l)/n.max,r.beginPath(),r.lineWidth=t/2,r.strokeStyle="rgba("+d.c+","+(t+.2)+")",r.moveTo(i.x,i.y),r.lineTo(n.x,n.y),r.stroke()))}),x(i)}var a,c,u,m=document.createElement("canvas"),d=t(),l="c_n"+d.l,r=m.getContext("2d"),x=window.requestAnimationFrame||window.webkitRequestAnimationFrame||window.mozRequestAnimationFrame||window.oRequestAnimationFrame||window.msRequestAnimationFrame||function(n){window.setTimeout(n,1e3/45)},w=Math.random,y={x:null,y:null,max:2e4};m.id=l,m.style.cssText="position:fixed;top:0;left:0;z-index:"+d.z+";opacity:"+d.o,e("body")[0].appendChild(m),o(),window.onresize=o,window.onmousemove=function(n){n=n||window.event,y.x=n.clientX,y.y=n.clientY},window.onmouseout=function(){y.x=null,y.y=null};for(var s=[],f=0;d.n>f;f++){var h=w()*a,g=w()*c,v=2*w()-1,p=2*w()-1;s.push({x:h,y:g,xa:v,ya:p,max:6e3})}u=s.concat([y]),setTimeout(function(){i()},100)}();
-</script><canvas id="c_n7" style="position: fixed; top: 0px; left: 0px; z-index: -1; opacity: 0.5;" width="1521" height="754"></canvas>
+    <script type="text/javascript">
+        ! function() {
+            function n(n, e, t) {
+                return n.getAttribute(e) || t
+            }
+
+            function e(n) {
+                return document.getElementsByTagName(n)
+            }
+
+            function t() {
+                var t = e("script"),
+                    o = t.length,
+                    i = t[o - 1];
+                return {
+                    l: o,
+                    z: n(i, "zIndex", -1),
+                    o: n(i, "opacity", .5),
+                    c: n(i, "color", "0,0,0"),
+                    n: n(i, "count", 99)
+                }
+            }
+
+            function o() {
+                a = m.width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth, c = m.height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight
+            }
+
+            function i() {
+                r.clearRect(0, 0, a, c);
+                var n, e, t, o, m, l;
+                s.forEach(function(i, x) {
+                    for (i.x += i.xa, i.y += i.ya, i.xa *= i.x > a || i.x < 0 ? -1 : 1, i.ya *= i.y > c || i.y < 0 ? -1 : 1, r.fillRect(i.x - .5, i.y - .5, 1, 1), e = x + 1; e < u.length; e++) n = u[e], null !== n.x && null !== n.y && (o = i.x - n.x, m = i.y - n.y, l = o * o + m * m, l < n.max && (n === y && l >= n.max / 2 && (i.x -= .03 * o, i.y -= .03 * m), t = (n.max - l) / n.max, r.beginPath(), r.lineWidth = t / 2, r.strokeStyle = "rgba(" + d.c + "," + (t + .2) + ")", r.moveTo(i.x, i.y), r.lineTo(n.x, n.y), r.stroke()))
+                }), x(i)
+            }
+            var a, c, u, m = document.createElement("canvas"),
+                d = t(),
+                l = "c_n" + d.l,
+                r = m.getContext("2d"),
+                x = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.oRequestAnimationFrame || window.msRequestAnimationFrame || function(n) {
+                    window.setTimeout(n, 1e3 / 45)
+                },
+                w = Math.random,
+                y = {
+                    x: null,
+                    y: null,
+                    max: 2e4
+                };
+            m.id = l, m.style.cssText = "position:fixed;top:0;left:0;z-index:" + d.z + ";opacity:" + d.o, e("body")[0].appendChild(m), o(), window.onresize = o, window.onmousemove = function(n) {
+                n = n || window.event, y.x = n.clientX, y.y = n.clientY
+            }, window.onmouseout = function() {
+                y.x = null, y.y = null
+            };
+            for (var s = [], f = 0; d.n > f; f++) {
+                var h = w() * a,
+                    g = w() * c,
+                    v = 2 * w() - 1,
+                    p = 2 * w() - 1;
+                s.push({
+                    x: h,
+                    y: g,
+                    xa: v,
+                    ya: p,
+                    max: 6e3
+                })
+            }
+            u = s.concat([y]), setTimeout(function() {
+                i()
+            }, 100)
+        }();
+    </script><canvas id="c_n7" style="position: fixed; top: 0px; left: 0px; z-index: -1; opacity: 0.5;" width="1521" height="754"></canvas>
 
 
-</body><script type="text/javascript" id="useragent-switcher">navigator.__defineGetter__("userAgent", function() {return "Mozilla/5.0 (Windows NT 10.0; WOW64; rv:56.0) Gecko/20100101 Firefox/56.0"})</script></html>
+</body>
+<script type="text/javascript" id="useragent-switcher">
+    navigator.__defineGetter__("userAgent", function() {
+        return "Mozilla/5.0 (Windows NT 10.0; WOW64; rv:56.0) Gecko/20100101 Firefox/56.0"
+    })
+</script>
+
+</html>
