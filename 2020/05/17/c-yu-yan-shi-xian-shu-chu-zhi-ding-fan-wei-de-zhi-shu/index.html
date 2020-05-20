@@ -29,7 +29,7 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 4.2.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<meta name="generator" content="Hexo 4.2.0"></head>
 
 
 <body>
@@ -245,7 +245,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/ACG-22.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/ACG-28.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -410,8 +410,8 @@
             <div id="articleContent">
                 <h2 id="穷举素数"><a href="#穷举素数" class="headerlink" title="穷举素数"></a>穷举素数</h2><h3 id="Outdated：主函数中实现"><a href="#Outdated：主函数中实现" class="headerlink" title="Outdated：主函数中实现"></a>Outdated：主函数中实现</h3><p><strong>思路：</strong><br>1.判断区间为3～sqrt（本身）<br>2.排除偶数//被判断数和判断数中都排除</p>
 <a id="more"></a>
-<h4 id="一-素数在数组中顺序存储"><a href="#一-素数在数组中顺序存储" class="headerlink" title="一.素数在数组中顺序存储"></a>一.素数在数组中顺序存储</h4><pre class=" language-C++"><code class="language-C++">#include<stdio.h>
-#include<math.h>
+<h4 id="一-素数在数组中顺序存储"><a href="#一-素数在数组中顺序存储" class="headerlink" title="一.素数在数组中顺序存储"></a>一.素数在数组中顺序存储</h4><pre><code class="C">#include&lt;stdio.h&gt;
+#include&lt;math.h&gt;
 #define swap(a,b){a=a^b;b=a^b;a=a^b;}//定义数字交换的宏
 
 int main(void) {
@@ -419,14 +419,14 @@ int main(void) {
 
     int sub=1,sqr;//定义sub记录下标,从1开始;定义sqr缩小判断范围
    const int N=1000;
-    printf("输出2-%d之间的素数\n",N);
+    printf(&quot;输出2-%d之间的素数\n&quot;,N);
     int prime[N]={2,0};//定义数组存放素数,除prime[0]外全部初始化为0
-    for(int i=3;i<=N;i+=2){//判断从3到N的奇数,排除大于2偶数
+    for(int i=3;i&lt;=N;i+=2){//判断从3到N的奇数,排除大于2偶数
         // if(i%2==0) continue;//如果i为2的倍数,不是素数,继续下次循环 i++时
 
         sqr=sqrt(i);
         int flag=0;
-        for(int j=3;j<=sqr;j+=2){//判断从3到sqr的奇数是否能整除i
+        for(int j=3;j&lt;=sqr;j+=2){//判断从3到sqr的奇数是否能整除i
             if(i%j==0) {
                 flag=1;
                 break;
@@ -436,14 +436,14 @@ int main(void) {
 
         prime[sub++]=i;
     }
-    for(int i=0;i<sub;i++)
-        printf("%d\t",prime[i]);
-    puts("");
+    for(int i=0;i&lt;sub;i++)
+        printf(&quot;%d\t&quot;,prime[i]);
+    puts(&quot;&quot;);
 
     return (0);
 }</code></pre>
-<h4 id="二-素数与数组下标相同"><a href="#二-素数与数组下标相同" class="headerlink" title="二.素数与数组下标相同"></a>二.素数与数组下标相同</h4><pre class=" language-C++"><code class="language-C++">#include<stdio.h>
-#include<math.h>
+<h4 id="二-素数与数组下标相同"><a href="#二-素数与数组下标相同" class="headerlink" title="二.素数与数组下标相同"></a>二.素数与数组下标相同</h4><pre><code class="C">#include&lt;stdio.h&gt;
+#include&lt;math.h&gt;
 #define swap(a,b){a=a^b;b=a^b;a=a^b;}//定义数字交换的宏
 
 int main(void) {
@@ -451,14 +451,14 @@ int main(void) {
 
     int sqr;//从1开始;定义sqr缩小判断范围
     const int N=1000;
-    printf("输出2-%d之间的素数\n",N);
+    printf(&quot;输出2-%d之间的素数\n&quot;,N);
     int prime[N+1]={0,0,2,0};//定义数组存放素数,除prime[2]外全部初始化为0
-    for(int i=3;i<=N;i+=2){//判断从3到N的奇数,排除大于2偶数
+    for(int i=3;i&lt;=N;i+=2){//判断从3到N的奇数,排除大于2偶数
        // if(i%2==0) continue;//如果i为2的倍数,不是素数,继续下次循环 i++时用
 
         sqr=sqrt(i);
         int flag=0;
-        for(int j=3;j<=sqr;j+=2){//判断从3到sqr的奇数是否能整除i
+        for(int j=3;j&lt;=sqr;j+=2){//判断从3到sqr的奇数是否能整除i
             if(i%j==0) {
                 flag=1;
                 break;
@@ -468,26 +468,26 @@ int main(void) {
 
         prime[i]=i;
     }
-    for(int i=0;i<=N;i++)
+    for(int i=0;i&lt;=N;i++)
         if(prime[i]!=0)
-            printf("%d\t",prime[i]);
-    puts("");
+            printf(&quot;%d\t&quot;,prime[i]);
+    puts(&quot;&quot;);
 
     return (0);
 }</code></pre>
 <h3 id="新版本：主函数中实现"><a href="#新版本：主函数中实现" class="headerlink" title="新版本：主函数中实现"></a>新版本：主函数中实现</h3><p><strong>思路：</strong><br>1.大于2的偶数都不是质数，只对奇数进行整除判断<br>2.只整除小于等于no的平方根的质数//由长方形面积和约数</p>
 <p><img src="https://img-blog.csdnimg.cn/20191113210638654.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzE5NzcxNTkx,size_16,color_FFFFFF,t_70" alt="算法依据"></p>
-<pre class=" language-C++"><code class="language-C++">#include<stdio.h>
+<pre><code class="C">#include&lt;stdio.h&gt;
 
 int *prime(int n){
     int prime[100000]={0};//数组元素个数可以扩展
     int ptr =0;
     prime[ptr++]=2;
     prime[ptr++]=3;
-    for(int no=5;no<=n;no+=2){//大于2的偶数都不是质数
+    for(int no=5;no&lt;=n;no+=2){//大于2的偶数都不是质数
         int flag=0;
 
-        for(int i=1;prime[i]*prime[i]<=no;i++){//只整除小于等于no的平方根的质数
+        for(int i=1;prime[i]*prime[i]&lt;=no;i++){//只整除小于等于no的平方根的质数
             if (no%prime[i]==0) {
                 flag=1;
                 break;
@@ -503,28 +503,28 @@ int main(void) {
     const int N=100000;//求N及以下的素数
     int *a=prime(N);
     int counter=0;
-    for(int i=0;i<N/2;i++){//素数个数不会大于N/2
+    for(int i=0;i&lt;N/2;i++){//素数个数不会大于N/2
         if(a[i]==0) break;//遇到0,则后面皆为0 跳出
-        printf("%d\t",a[i]);
+        printf(&quot;%d\t&quot;,a[i]);
         counter++;
 
     }
-    printf("\n\t1~%d的素数y个数为:%d\n",N,counter);//测速时可以注释掉输出
+    printf(&quot;\n\t1~%d的素数y个数为:%d\n&quot;,N,counter);//测速时可以注释掉输出
 
     return (0);
 }</code></pre>
 <h2 id="算法性能直观测试"><a href="#算法性能直观测试" class="headerlink" title="算法性能直观测试"></a>算法性能直观测试</h2><p><strong>可以将主函数体放置于下面的代码测试</strong>不同算法的性能**</p>
-<pre class=" language-java"><code class="language-java">#include <span class="token operator">&lt;</span>ctime<span class="token operator">></span><span class="token comment" spellcheck="true">//需要额外添加该编译预处理指令</span>
+<pre><code class="java">#include &lt;ctime&gt;//需要额外添加该编译预处理指令
 
-<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">int</span> tstart <span class="token punctuation">,</span>tstop<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//分别记录起始和结束时间</span>
-    <span class="token comment" spellcheck="true">//测试函数花费时间</span>
-    tstart<span class="token operator">=</span><span class="token function">clock</span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+int main(void) {
+    int tstart ,tstop; //分别记录起始和结束时间
+    //测试函数花费时间
+    tstart=clock ();
     ····················须测速代码
-    tstop<span class="token operator">=</span><span class="token function">clock</span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"花费时间(ms):%d\n"</span><span class="token punctuation">,</span>tstop<span class="token operator">-</span> tstart<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//ms为单位</span>
-    <span class="token keyword">return</span> <span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
+    tstop=clock ();
+    printf(&quot;花费时间(ms):%d\n&quot;,tstop- tstart);//ms为单位
+    return (0);
+}
 
 </code></pre>
 
@@ -641,7 +641,7 @@ int main(void) {
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/ACG-2.png" class="responsive-img" alt="练习项目">
+                        <img src="/medias/featureimages/ACG-12.jpg" class="responsive-img" alt="练习项目">
                         
                         <span class="card-title">练习项目</span>
                     </div>
@@ -688,8 +688,7 @@ More info: 固定栏
                 <a href="/2020/05/11/bu-hui-zhen-de-you-ren-bu-xi-huan-xiao-mi-zi-ba-bu-hui-ba-bu-hui-ba/">
                     <div class="card-image">
                         
-                        
-                        <img src="/medias/featureimages/ACG-17.jpg" class="responsive-img" alt="不会真的有人不喜欢小弥子吧,不会吧不会吧">
+                        <img src="https://niconiconi-lyf.github.io/2020/05/11/bu-hui-zhen-de-you-ren-bu-xi-huan-xiao-mi-zi-ba-bu-hui-ba-bu-hui-ba/小弥子-3.JP2" class="responsive-img" alt="不会真的有人不喜欢小弥子吧,不会吧不会吧">
                         
                         <span class="card-title">不会真的有人不喜欢小弥子吧,不会吧不会吧</span>
                     </div>
