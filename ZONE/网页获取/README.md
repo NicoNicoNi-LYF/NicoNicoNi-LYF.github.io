@@ -1,4 +1,4 @@
-wget -r -p -np -k -P ~/tmp/ http://java-er.com
+wget -r -p -np -k -P ~/网页获取/ http://java-er.com
 
 
 
@@ -22,4 +22,7 @@ wget -r -p -np -k -P ~/tmp/ http://java-er.com
 -L 递归时不进入其它主机，如wget -c -r www.xxx.org/
 -A 指定要下载的文件样式列表，多个样式用逗号分隔
 -i 后面跟一个文件，文件内指明要下载的URL
+
+----------------------------------------------------------------------
+或者浏览器直接保存html源码 使用工具箱的html转markdown
 
