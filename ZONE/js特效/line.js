@@ -17,7 +17,7 @@
                      z: n(i, "zIndex", -1),
                      o: n(i, "opacity", .5),
                      c: n(i, "color", "0,0,0"),
-                     n: n(i, "count", 99)
+                     n: n(i, "count", 99) //线条数 原99
                  }
              }
 
