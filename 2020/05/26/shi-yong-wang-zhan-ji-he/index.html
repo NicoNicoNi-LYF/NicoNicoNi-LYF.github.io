@@ -242,6 +242,19 @@
 </header>
 
     
+<script src="/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
+
 
 
 
@@ -672,47 +685,53 @@ _文章链接:_ [https://www.liuyao-blog.cn/posts/d9d7.html](https://www.liuyao-
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;Current
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
             <div class="card">
-                <a href="/2020/05/26/shi-yong-wang-zhan-ji-he/">
+                <a href="/2020/06/08/ying/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/ACG-18.jpg" class="responsive-img" alt="实用网站集合">
+                        <img src="/medias/featureimages/ACG-10.jpg" class="responsive-img" alt="嘤">
                         
-                        <span class="card-title">实用网站集合</span>
+                        <span class="card-title">嘤</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            搞学习
-CSDN： https://www.csdn.net/
-TED（最优质的演讲）：https://www.ted.com/
-谷粉学术： https://gfsoso.99lb.net/scholar.html
-大学资源网：http:/
+                            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-05-26
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-06-08
+                        </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E8%B5%84%E6%96%99/" class="post-category">
-                                    资料
-                                </a>
-                            
+                            <i class="fas fa-user fa-fw"></i>
+                            冷少
                             
                         </span>
                     </div>
                 </div>
-
                 
             </div>
         </div>
